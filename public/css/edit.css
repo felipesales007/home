@@ -89,3 +89,25 @@ p br {
 select {
     background: white url('../images/default/others/arrow-down.png') no-repeat right;
 }
+
+/*
+=========================================================
+* desktop screen
+=========================================================
+*/
+
+@media (min-width: 992px) {
+
+}
+
+/*
+=========================================================
+* mobile screen
+=========================================================
+*/
+
+@media (max-width: 991px) {
+    .filter-search .border-right {
+        border-right: none !important;
+    }
+}

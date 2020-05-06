@@ -56,7 +56,7 @@
                     </div>
 
                     <!-- botão -->
-                    <div class="col-md-2">
+                    <div class="col-md-2 mt-4">
                         <a type="submit" id="btn-search" class="btn btn-success text-white btn-block">Buscar</a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
 
                     <!-- ordem -->
                     <div class="ml-auto d-flex align-items-center">
-                        <div>
+                        <div class="filter-search">
                             <a href="javascript:void(0)" class="view-list px-3 border-right active">Todos</a>
                             <a href="javascript:void(0)" class="view-list px-3 border-right">Recentes</a>
                         </div>

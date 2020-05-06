@@ -1110,7 +1110,6 @@ a:hover {
 
 .block-13, .slide-one-item {
     position: relative;
-    touch-action: none;
     z-index: 1;
 }
 
