@@ -1,0 +1,456 @@
+/*!
+ * FE-Template Front-End by Felipe Sales v1.0.0 (https://www.felipesales.com.br)
+ * Copyright 2018-2020 The FE-Template Authors
+ * Copyright 2018-2020 FE, Inc.
+ * Licensed under MIT
+ */
+
+/*
+=========================================================
+* colors
+=========================================================
+*/
+
+.fe-text-blue {
+    color: #5e72e4;
+}
+
+.fe-bg-blue {
+    background-color: #5e72e4;
+}
+
+.fe-bg-blue-t {
+    background-color: rgba(94, 114, 228, 0.2);
+}
+
+.fe-text-indigo {
+    color: #5603ad;
+}
+
+.fe-bg-indigo {
+    background-color: #5603ad;
+}
+
+.fe-bg-indigo-t {
+    background-color: rgba(86, 3, 173, 0.2);
+}
+
+.fe-text-purple {
+    color: #8965e0;
+}
+
+.fe-bg-purple {
+    background-color: #8965e0;
+}
+
+.fe-bg-purple-t {
+    background-color: rgba(137, 101, 224, 0.2);
+}
+
+.fe-text-pink {
+    color: #f3a4b5;
+}
+
+.fe-bg-pink {
+    background-color: #f3a4b5;
+}
+
+.fe-bg-pink-t {
+    background-color: rgba(243, 164, 181, 0.2);
+}
+
+.fe-text-red {
+    color: #ff0032;
+}
+
+.fe-bg-red {
+    background-color: #ff0032;
+}
+
+.fe-bg-red-t {
+    background-color: rgba(255, 0, 50, 0.2);
+}
+
+.fe-text-orange {
+    color: #fb6340;
+}
+
+.fe-bg-orange {
+    background-color: #fb6340;
+}
+
+.fe-bg-orange-t {
+    background-color: rgba(251, 99, 64, 0.2);
+}
+
+.fe-text-yellow {
+    color: #ffd600;
+}
+
+.fe-bg-yellow {
+    background-color: #ffd600;
+}
+
+.fe-bg-yellow-t {
+    background-color: rgba(255, 214, 0, 0.2);
+}
+
+.fe-text-green {
+    color: #2dce89;
+}
+
+.fe-bg-green {
+    background-color: #2dce89;
+}
+
+.fe-bg-green-t {
+    background-color: rgba(45, 206, 137, 0.2);
+}
+
+.fe-text-teal {
+    color: #11cdef;
+}
+
+.fe-bg-teal {
+    background-color: #11cdef;
+}
+
+.fe-bg-teal-t {
+    background-color: rgba(17, 205, 239, 0.2);
+}
+
+.fe-text-cyan {
+    color: #2bffc6;
+}
+
+.fe-bg-cyan {
+    background-color: #2bffc6;
+}
+
+.fe-bg-cyan-t {
+    background-color: rgba(43, 255, 198, 0.2);
+}
+
+.fe-text-white {
+    color: #ffffff;
+}
+
+.fe-bg-white {
+    background-color: #ffffff;
+}
+
+.fe-bg-white-t {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.fe-text-gray {
+    color: #8898aa;
+}
+
+.fe-bg-gray {
+    background-color: #8898aa;
+}
+
+.fe-bg-gray-t {
+    background-color: rgba(136, 152, 170, 0.2);
+}
+
+.fe-text-gray-dark {
+    color: #32325d;
+}
+
+.fe-bg-gray-dark {
+    background-color: #32325d;
+}
+
+.fe-bg-gray-dark-t {
+    background-color: rgba(50, 50, 93, 0.2);
+}
+
+.fe-text-light {
+    color: #ced4da;
+}
+
+.fe-bg-light {
+    background-color: #ced4da;
+}
+
+.fe-bg-light-t {
+    background-color: rgba(206, 212, 218, 0.2);
+}
+
+.fe-text-lighter {
+    color: #e9ecef;
+}
+
+.fe-bg-lighter {
+    background-color: #e9ecef;
+}
+
+.fe-bg-lighter-t {
+    background-color: rgba(233, 236, 239, 0.2);
+}
+
+.fe-text-primary {
+    color: #5e72e4;
+}
+
+.fe-bg-primary {
+    background-color: #5e72e4;
+}
+
+.fe-bg-primary-t {
+    background-color: rgba(94, 114, 228, 0.2);
+}
+
+.fe-text-secondary {
+    color: #f7fafc;
+}
+
+.fe-bg-secondary {
+    background-color: #f7fafc;
+}
+
+.fe-bg-secondary-t {
+    background-color: rgba(244, 245, 247, 0.2);
+}
+
+.fe-text-success {
+    color: #2dce89;
+}
+
+.fe-bg-success {
+    background-color: #2dce89;
+}
+
+.fe-bg-success-t {
+    background-color: rgba(45, 206, 137, 0.2);
+}
+
+.fe-text-info {
+    color: #11cdef;
+}
+
+.fe-bg-info {
+    background-color: #11cdef;
+}
+
+.fe-bg-info-t {
+    background-color: rgba(17, 205, 239, 0.2);
+}
+
+.fe-text-warning {
+    color: #fb6340;
+}
+
+.fe-bg-warning {
+    background-color: #fb6340;
+}
+
+.fe-bg-warning-t {
+    background-color: rgba(251, 99, 64, 0.2);
+}
+
+.fe-text-danger {
+    color: #f5365c;
+}
+
+.fe-bg-danger {
+    background-color: #f5365c;
+}
+
+.fe-bg-danger-t {
+    background-color: rgba(245, 54, 92, 0.2);
+}
+
+.fe-text-darker {
+    color: #727272;
+}
+
+.fe-bg-darker {
+    background-color: #727272;
+}
+
+.fe-bg-darker-t {
+    background-color: rgba(114, 114, 114, 0.2);
+}
+
+.fe-text-dark {
+    color: #212529;
+}
+
+.fe-bg-dark {
+    background-color: #212529;
+}
+
+.fe-bg-dark-t {
+    background-color: rgba(33, 37, 41, 0.2);
+}
+
+.fe-text-black {
+    color: #000000;
+}
+
+.fe-bg-black {
+    background-color: #000000;
+}
+
+.fe-bg-black-t {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fe-text-default {
+    color: #172b4d;
+}
+
+.fe-bg-default {
+    background-color: #172b4d;
+}
+
+.fe-bg-default-t {
+    background-color: rgba(23, 43, 77, 0.2);
+}
+
+.fe-text-color {
+    color: #888ea0;
+}
+
+.fe-text-color-plus {
+    color: #686e7f;
+}
+
+/*
+=========================================================
+* general
+=========================================================
+*/
+
+.fe-mouse {
+    cursor: default !important;
+}
+
+.fe-pointer {
+    cursor: pointer;
+}
+
+.fe-center-y {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fe-center-x {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fe-none {
+    display: none !important;
+}
+
+.fe-hidden {
+    visibility: hidden !important;
+}
+
+.fe-right {
+    float: right !important;
+}
+
+.fe-left {
+    float: left !important;
+}
+
+.fe-notransition {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.fe-transition {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.fe-block-copy {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.fe-radius {
+    border-radius: 10px !important;
+}
+
+.fe-img-center {
+    background-size: cover;
+    background-position: center;
+}
+
+.fe-rounded {
+    border-radius: 50% !important;
+}
+
+.fe-avatar {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    border-radius: .375rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.fe-avatar img {
+    width: 100%;
+    border-radius: .375rem;
+}
+
+.fe-avatar-lg,
+.fe-avatar-lg img {
+    width: 58px;
+    height: 58px;
+}
+
+.fe-avatar-sm,
+.fe-avatar-sm img {
+    width: 36px;
+    height: 36px;
+}
+
+.fe-avatar-xs,
+.fe-avatar-xs img {
+    width: 24px;
+    height: 24px;
+}
+
+/*
+=========================================================
+* desktop screen
+=========================================================
+*/
+
+@media (min-width: 992px) {
+    .fe-desktop-none {
+        display: none;
+    }
+}
+
+/*
+=========================================================
+* mobile screen
+=========================================================
+*/
+
+@media (max-width: 991px) {
+    .fe-mobile-none {
+        display: none;
+    }
+}

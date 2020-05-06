@@ -1,0 +1,337 @@
+.fe-wa-phone {
+    display: block;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    left: -40px;
+    bottom: -50px;
+    visibility: visible;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 999;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: visibility .5s;
+    -moz-transition: visibility .5s;
+    -o-transition: visibility .5s;
+    transition: visibility .5s;
+}
+
+.fe-wa-circle {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    top: 40px;
+    left: 40px;
+    background-color: transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid rgba(30, 30, 30, .4);
+    opacity: .1;
+    -webkit-animation: fe-wa-circle-anim 1.2s infinite ease-in-out;
+    -moz-animation: fe-wa-circle-anim 1.2s infinite ease-in-out;
+    -ms-animation: fe-wa-circle-anim 1.2s infinite ease-in-out;
+    -o-animation: fe-wa-circle-anim 1.2s infinite ease-in-out;
+    animation: fe-wa-circle-anim 1.2s infinite ease-in-out;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.fe-wa-phone.fe-wa-static .fe-wa-circle {
+    -webkit-animation: fe-wa-circle-anim 2.2s infinite ease-in-out !important;
+    -moz-animation: fe-wa-circle-anim 2.2s infinite ease-in-out !important;
+    -ms-animation: fe-wa-circle-anim 2.2s infinite ease-in-out !important;
+    -o-animation: fe-wa-circle-anim 2.2s infinite ease-in-out !important;
+    animation: fe-wa-circle-anim 2.2s infinite ease-in-out !important
+}
+
+.fe-wa-circle-fill {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    top: 58px;
+    left: 58px;
+    background-color: #000;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    opacity: .1;
+    -webkit-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out;
+    -moz-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out;
+    -ms-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out;
+    -o-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out;
+    animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.fe-wa-phone.fe-wa-static .fe-wa-circle-fill {
+    -webkit-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out !important;
+    -moz-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out !important;
+    -ms-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out !important;
+    -o-animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out !important;
+    animation: fe-wa-circle-fill-anim 2.3s infinite ease-in-out !important;
+    opacity: 0 !important;
+}
+
+.fe-wa-img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 70px;
+    left: 70px;
+    background-image: url(../../images/default/others/whatsapp.png);
+    background-size: 40px 40px;
+    background-color: rgba(30, 30, 30, .1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    opacity: 1;
+    -webkit-animation: fe-wa-circle-img-anim 1s infinite ease-in-out;
+    -moz-animation: fe-wa-circle-img-anim 1s infinite ease-in-out;
+    -ms-animation: fe-wa-circle-img-anim 1s infinite ease-in-out;
+    -o-animation: fe-wa-circle-img-anim 1s infinite ease-in-out;
+    animation: fe-wa-circle-img-anim 1s infinite ease-in-out;
+}
+
+.fe-wa-phone.fe-wa-static .fe-wa-img {
+    -webkit-animation: fe-wa-circle-img-anim 0s infinite ease-in-out !important;
+    -moz-animation: fe-wa-circle-img-anim 0s infinite ease-in-out !important;
+    -ms-animation: fe-wa-circle-img-anim 0s infinite ease-in-out !important;
+    -o-animation: fe-wa-circle-img-anim 0s infinite ease-in-out !important;
+    animation: fe-wa-circle-img-anim 0s infinite ease-in-out !important;
+}
+
+@-moz-keyframes fe-wa-circle-anim {
+    0% {
+        -moz-transform: rotate(0deg) scale(0.5) skew(1deg);
+        opacity: .1;
+        -moz-opacity: .1;
+        -webkit-opacity: .1;
+        -o-opacity: .1;
+    }
+    30% {
+        -moz-transform: rotate(0deg) scale(.7) skew(1deg);
+        opacity: .5;
+        -moz-opacity: .5;
+        -webkit-opacity: .5;
+        -o-opacity: .5;
+    }
+    100% {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .6;
+        -moz-opacity: .6;
+        -webkit-opacity: .6;
+        -o-opacity: .1;
+    }
+}
+
+@-webkit-keyframes fe-wa-circle-anim {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
+        -webkit-opacity: .1;
+    }
+    30% {
+        -webkit-transform: rotate(0deg) scale(.7) skew(1deg);
+        -webkit-opacity: .5;
+    }
+    100% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+        -webkit-opacity: .1;
+    }
+}
+
+@-o-keyframes fe-wa-circle-anim {
+    0% {
+        -o-transform: rotate(0deg) scale(0.5) skew(1deg);
+        -o-opacity: .1;
+    }
+    30% {
+        -o-transform: rotate(0deg) scale(.7) skew(1deg);
+        -o-opacity: .5;
+    }
+    100% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg);
+        -o-opacity: .1;
+    }
+}
+
+@keyframes fe-wa-circle-anim {
+    0% {
+        transform: rotate(0deg) scale(0.5) skew(1deg);
+        opacity: .1;
+    }
+    30% {
+        transform: rotate(0deg) scale(.7) skew(1deg);
+        opacity: .5;
+    }
+    100% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .1;
+    }
+}
+
+@-moz-keyframes fe-wa-circle-fill-anim {
+    0% {
+        -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+    50% {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2;
+    }
+    100% {
+        -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+}
+
+@-webkit-keyframes fe-wa-circle-fill-anim {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+    50% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2;
+    }
+    100% {
+        -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+}
+
+@-o-keyframes fe-wa-circle-fill-anim {
+    0% {
+        -o-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+    50% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2;
+    }
+    100% {
+        -o-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+}
+
+@keyframes fe-wa-circle-fill-anim {
+    0% {
+        transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+    50% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2;
+    }
+    100% {
+        transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2;
+    }
+}
+
+@keyframes fe-wa-circle-img-anim {
+    0% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }
+    10% {
+        transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    20% {
+        transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    100%, 50% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }
+}
+
+@-moz-keyframes fe-wa-circle-img-anim {
+    0% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }
+    10% {
+        -moz-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    20% {
+        -moz-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        -moz-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        -moz-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    100%, 50% {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg);
+    }
+}
+
+@-webkit-keyframes fe-wa-circle-img-anim {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+    }
+    10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    100%, 50% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+    }
+}
+
+@-o-keyframes fe-wa-circle-img-anim {
+    0% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg);
+    }
+    10% {
+        -o-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    20% {
+        -o-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        -o-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        -o-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    100%, 50% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg);
+    }
+}
+
+.fe-wa-phone.fe-wa-green .fe-wa-circle {
+    border-color: rgb(0, 242, 164);
+}
+
+.fe-wa-phone.fe-wa-green .fe-wa-circle-fill {
+    background-color: rgb(0, 242, 164);
+}
+
+.fe-wa-phone.fe-wa-green .fe-wa-img {
+    background-color: rgb(46, 203, 113);
+}
