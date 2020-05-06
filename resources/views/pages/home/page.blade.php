@@ -6,4 +6,7 @@
     <!-- apresentação -->
     @include('pages.home.layouts.presentation')
 
+    <!-- buscar -->
+    @include('pages.home.layouts.search')
+
 @endsection

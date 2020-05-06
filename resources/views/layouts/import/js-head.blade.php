@@ -4,5 +4,4 @@
 @endif
 
 <!-- ajax jquery -->
-<script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/jquery/ajax.jquery.min.js') }}"></script>

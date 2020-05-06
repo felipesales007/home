@@ -143,3 +143,14 @@ $('#button-send-contact').on('click', function () {
         }
     }
 });
+
+// active navbar
+$(document).ready(function () {
+    $('#menu a[href]').each(function() {
+        let href = $(this).attr('href');
+
+        if (href === $(location).attr('href')) {
+            $(this).parent().addClass('active');
+        }
+    });
+});

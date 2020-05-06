@@ -14,15 +14,17 @@
         @include('layouts.import.js-head')
     </head>
     <body ondragstart="return false;">
-        <!-- corpo -->
-        <div>
-            <div>
-                @yield('content')
-            </div>
+        <!-- spinner -->
+        <div class="site-loader"></div>
 
-            <!-- whatsapp -->
-            @include('layouts.components.whatsapp')
-        </div>
+        <!-- menu -->
+        @include('layouts.components.menu')
+
+        <!-- corpo -->
+        @yield('content')
+
+        <!-- whatsapp -->
+        @include('layouts.components.whatsapp')
 
         <!-- javascript -->
         @include('layouts.import.js')
