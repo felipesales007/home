@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get ('/', function () { return redirect('home'); });
 
-Route::get ('home',          ['as' => 'home.page',     'uses' => 'Page\HomeController@show']);
-Route::get ('contato',       ['as' => 'contact.page',  'uses' => 'Page\ContactController@show']);
-Route::post('contato/email', ['as' => 'contact.email', 'uses' => 'Page\ContactController@email']);
+Route::get ('home',             ['as' => 'home.page',     'uses' => 'Page\HomeController@show']);
+Route::get ('imoveis',          ['as' => 'house.page',    'uses' => 'Page\HouseController@show']);
+Route::get ('imoveis/detalhes', ['as' => 'house.detail',  'uses' => 'Page\HouseController@detail']);
+Route::get ('contato',          ['as' => 'contact.page',  'uses' => 'Page\ContactController@show']);
+Route::post('contato/email',    ['as' => 'contact.email', 'uses' => 'Page\ContactController@email']);

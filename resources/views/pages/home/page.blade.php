@@ -9,4 +9,7 @@
     <!-- buscar -->
     @include('pages.home.layouts.search')
 
+    <!-- casas -->
+    @include('pages.home.layouts.houses')
+
 @endsection

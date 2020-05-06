@@ -312,11 +312,7 @@
 }
 
 .fe-text-color {
-    color: #888ea0;
-}
-
-.fe-text-color-plus {
-    color: #686e7f;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /*
