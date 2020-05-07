@@ -1,6 +1,6 @@
-<div class="site-section site-section-sm bg-light">
+<div id="card-house-module" class="site-section site-section-sm bg-light">
     <div class="container">
-        <div class="row mb-5">
+        <div class="row">
             <!-- card -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="property-entry h-100">
@@ -416,19 +416,6 @@
                             </ul>
                         </div>
                     </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- paginação -->
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="site-pagination">
-                    <a href="javascript:void(0)" class="active">1</a>
-                    <a href="javascript:void(0)">2</a>
-                    <a href="javascript:void(0)">3</a>
-                    <a href="javascript:void(0)">4</a>
-                    <a href="javascript:void(0)">5</a>
                 </div>
             </div>
         </div>

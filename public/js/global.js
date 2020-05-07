@@ -154,3 +154,18 @@ $(document).ready(function () {
         }
     });
 });
+
+// house card listing event
+$('#card-module').on('click', function () {
+    $(this).addClass('active');
+    $('#card-list').removeClass('active');
+    $('#card-house-module').removeClass('d-none');
+    $('#card-house-list').addClass('d-none');
+});
+
+$('#card-list').on('click', function () {
+    $(this).addClass('active');
+    $('#card-module').removeClass('active');
+    $('#card-house-list').removeClass('d-none');
+    $('#card-house-module').addClass('d-none');
+});

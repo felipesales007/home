@@ -1,4 +1,4 @@
-<div class="site-section site-section-sm bg-light">
+<div id="card-house-list" class="site-section site-section-sm bg-light d-none">
     <div class="container">
         <!-- card -->
         <div class="row mb-4">
@@ -446,18 +446,18 @@
                 </a>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- paginação -->
-        <div class="row mt-70">
-            <div class="col-md-12 text-center">
-                <div class="site-pagination">
-                    <a href="javascript:void(0)" class="active">1</a>
-                    <a href="javascript:void(0)">2</a>
-                    <a href="javascript:void(0)">3</a>
-                    <a href="javascript:void(0)">4</a>
-                    <a href="javascript:void(0)">5</a>
-                </div>
-            </div>
+<!-- paginação -->
+<div class="bg-light pb-90">
+    <div class="col-md-12 text-center">
+        <div class="site-pagination">
+            <a href="javascript:void(0)" class="active">1</a>
+            <a href="javascript:void(0)">2</a>
+            <a href="javascript:void(0)">3</a>
+            <a href="javascript:void(0)">4</a>
+            <a href="javascript:void(0)">5</a>
         </div>
     </div>
 </div>

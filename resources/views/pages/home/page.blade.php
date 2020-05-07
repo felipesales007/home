@@ -11,5 +11,6 @@
 
     <!-- casas -->
     @include('pages.home.layouts.houses-module')
+    @include('pages.home.layouts.houses-list')
 
 @endsection
