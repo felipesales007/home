@@ -6,7 +6,23 @@
                 <span class="icon-close2 js-menu-toggle"></span>
             </div>
         </div>
-        <div class="site-mobile-menu-body"></div>
+        <div class="site-mobile-menu-body">
+            <!-- social -->
+            <div class="col-lg-12 text-right fe-social-mobile">
+                <a href="javascript:void(0)" target="_blank" class="pl-0 pr-3 fe-text-color">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3 fe-text-color">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3 fe-text-color">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3 fe-text-color">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- menu desktop -->

@@ -427,6 +427,12 @@
     height: 24px;
 }
 
+.fe-social-mobile {
+    bottom: 0;
+    position: absolute;
+    padding: 35px;
+}
+
 /*
 =========================================================
 * desktop screen

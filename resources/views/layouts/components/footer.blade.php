@@ -8,16 +8,16 @@
 
             <!-- social -->
             <div class="col-lg-6 text-right">
-                <a href="javascript:void(0)" class="pl-0 pr-3">
+                <a href="javascript:void(0)" target="_blank" class="pl-0 pr-3">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="javascript:void(0)" class="pl-3 pr-3">
+                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="javascript:void(0)" class="pl-3 pr-3">
+                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="javascript:void(0)" class="pl-3 pr-3">
+                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
