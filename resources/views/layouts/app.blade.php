@@ -23,6 +23,9 @@
         <!-- corpo -->
         @yield('content')
 
+        <!-- rodapé -->
+        @include('layouts.components.footer')
+
         <!-- whatsapp -->
         @include('layouts.components.whatsapp')
 

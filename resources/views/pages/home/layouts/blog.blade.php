@@ -64,7 +64,7 @@
         </div>
 
         <!-- botão -->
-        <div class="col-md-2 mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-2 mx-auto mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
             <a href="javascript:void(0)" class="btn btn-success text-white btn-block">Mais notícias</a>
         </div>
     </div>
