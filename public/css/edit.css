@@ -90,9 +90,31 @@ select {
     background: white url('../images/default/others/arrow-down.png') no-repeat right;
 }
 
-.property-thumbnail .img-fluid {
+.property-thumbnail-module,
+.property-thumbnail-list {
+    border-top-left-radius: 0.25rem;
+}
+
+.property-thumbnail-module {
+    border-top-right-radius: 0.25rem;
+}
+
+.property-thumbnail-list {
+    border-bottom-left-radius: 0.25rem;
+}
+
+.property-thumbnail .img-fluid-module,
+.property-thumbnail .img-fluid-list {
     width: 100%;
+}
+
+.property-thumbnail .img-fluid-module {
     height: 220px;
+}
+
+.property-thumbnail .img-fluid-list {
+    height: 100%;
+    max-height: 330px;
 }
 
 /*
@@ -114,5 +136,14 @@ select {
 @media (max-width: 991px) {
     .filter-search .border-right {
         border-right: none !important;
+    }
+
+    .property-thumbnail-list {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0.25rem;
+    }
+
+    .property-thumbnail .img-fluid-list {
+        height: 220px;
     }
 }

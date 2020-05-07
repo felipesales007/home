@@ -10,6 +10,6 @@
     @include('pages.home.layouts.search')
 
     <!-- casas -->
-    @include('pages.home.layouts.houses')
+    @include('pages.home.layouts.houses-module')
 
 @endsection
