@@ -13,4 +13,7 @@
     @include('pages.home.layouts.houses-module')
     @include('pages.home.layouts.houses-list')
 
+    <!-- notícias -->
+    @include('pages.home.layouts.blog')
+
 @endsection
