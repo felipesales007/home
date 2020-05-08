@@ -1,4 +1,4 @@
-<div class="slide-one-item home-slider owl-carousel">
+<div class="slide-one-item home-slider owl-carousel bg-light">
     <div class="site-blocks-cover overlay" data-aos="fade" data-stellar-background-ratio="0.5" style="background-image: url({{ url('template/images/casa-1.png') }});">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">

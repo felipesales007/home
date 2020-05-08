@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label class="form-control-label font-weight-bold" for="message">Mensagem</label>
                         <div class="input-group validate-message">
-                            <textarea id="message" name="message" rows="4" resize="none" class="form-control form-control-textarea {{ $errors->has('message') ? 'is-invalid' : '' }}" placeholder="ex.: Olá tudo bem, gostaria de entrar em contato com você." minlength="10" maxlength="1500" onkeyup="firstLetterUppercase(this);" @if ($errors->has('message')) autofocus @endif>{{ old('message') }}</textarea>
+                            <textarea id="message" name="message" rows="4" resize="none" class="form-control form-control-textarea {{ $errors->has('message') ? 'is-invalid' : '' }}" placeholder="ex.: Olá tudo bem, gostaria de entrar em contato com você." minlength="10" maxlength="1500" required onkeyup="firstLetterUppercase(this);" @if ($errors->has('message')) autofocus @endif>{{ old('message') }}</textarea>
                         </div>
                         @if ($errors->has('message'))
                             <!-- alerta de erro -->

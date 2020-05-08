@@ -143,6 +143,8 @@ return [
     */
 
     'attributes'  => [
+        'house'   => 'imóvel',
+        'link'    => 'link',
         'name'    => 'nome',
         'email'   => 'e-mail',
         'message' => 'mensagem',

@@ -26,19 +26,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 250.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">165m²</span>
                                 </li>
@@ -72,19 +72,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 1.200</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">54m²</span>
                                 </li>
@@ -119,19 +119,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 220.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">72m²</span>
                                 </li>
@@ -165,19 +165,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 250.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">165m²</span>
                                 </li>
@@ -212,19 +212,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 120.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">54m²</span>
                                 </li>
@@ -258,19 +258,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 220.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">72m²</span>
                                 </li>
@@ -304,19 +304,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 250.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">165m²</span>
                                 </li>
@@ -350,19 +350,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 1.200</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">1</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">54m²</span>
                                 </li>
@@ -397,19 +397,19 @@
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">R$ 220.000</strong>
                             <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Quartos</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Banheiros</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Garagem</span>
                                     <span class="property-specs-number">2</span>
                                 </li>
-                                <li>
+                                <li class="text-center">
                                     <span class="property-specs">Área</span>
                                     <span class="property-specs-number">72m²</span>
                                 </li>

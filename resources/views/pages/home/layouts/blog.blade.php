@@ -12,7 +12,7 @@
         <!-- três últimas -->
         <div class="row">
             <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-md-6 col-lg-4 mb-5">
                 <div class="card-content-blog">
                     <a href="javascript:void(0)">
                         <img src="{{ url('template/images/caixa.jpg') }}" class="img-fluid img-fluid-module" alt="">
@@ -29,7 +29,7 @@
             </div>
 
             <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-6 col-lg-4 mb-5">
                 <div class="card-content-blog">
                     <a href="javascript:void(0)">
                         <img src="{{ url('template/images/ssa.jpeg') }}" class="img-fluid img-fluid-module" alt="">
@@ -46,7 +46,7 @@
             </div>
 
             <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-6 col-lg-4 mb-5">
                 <div class="card-content-blog">
                     <a href="javascript:void(0)">
                         <img src="{{ url('template/images/alpha.jpg') }}" class="img-fluid img-fluid-module" alt="">
@@ -64,7 +64,7 @@
         </div>
 
         <!-- botão -->
-        <div class="col-md-2 mx-auto mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-2 mx-auto mb-5 mb-lg-0">
             <a href="javascript:void(0)" class="btn btn-success text-white btn-block">Mais notícias</a>
         </div>
     </div>

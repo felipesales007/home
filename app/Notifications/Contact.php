@@ -44,7 +44,13 @@ class Contact extends Notification
         $mailMessage->subject('Notificação de contato');
         $mailMessage->greeting('Olá,');
         $mailMessage->line('Sou <b>' . $this->message->name . '</b> e venho através deste contato informar a mensagem abaixo:');
-        $mailMessage->line($this->message->message);
+
+        if ($this->message->house) {
+            $mailMessage->line('<b>Imóvel: </b>' . $this->message->house);
+            $mailMessage->line('<b>Link: </b><a href="' . $this->message->link . '">' . $this->message->link . '</a><br><br>');
+        }
+
+        $mailMessage->line($this->message->message . '<br><br>');
         $mailMessage->line('<b>E-mail para resposta: </b><a href="mailto:' . $this->message->email . '">' . $this->message->email . '</a>');
         $mailMessage->action('Acessar site', route('home.page'));
 

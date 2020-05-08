@@ -3,6 +3,15 @@
         // validação
         $('#form-contact').validate({
             rules: {
+                house: {
+                    minlength: 3,
+                    maxlength: 191,
+                },
+                link: {
+                    minlength: 3,
+                    maxlength: 191,
+                    url: true,
+                },
                 name: {
                     required: true,
                     minlength: 3,
@@ -20,6 +29,15 @@
                 },
             },
             messages: {
+                house: {
+                    minlength: 'O campo imóvel deve ter pelo menos {0} caracteres.',
+                    maxlength: 'O campo imóvel não pode ser superior a {0} caracteres.',
+                },
+                link: {
+                    minlength: 'O campo link deve ter pelo menos {0} caracteres.',
+                    maxlength: 'O campo link não pode ser superior a {0} caracteres.',
+                    url:       'O campo link não é uma URL válida.',
+                },
                 name: {
                     required:  'O campo nome é obrigatório.',
                     minlength: 'O campo nome deve ter pelo menos {0} caracteres.',

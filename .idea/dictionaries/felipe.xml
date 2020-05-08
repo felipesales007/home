@@ -173,6 +173,7 @@
       <w>bairro</w>
       <w>baloon</w>
       <w>bancos</w>
+      <w>banheiros</w>
       <w>banir</w>
       <w>barra</w>
       <w>baseada</w>
@@ -245,6 +246,7 @@
       <w>carregando</w>
       <w>carregar</w>
       <w>casa</w>
+      <w>casas</w>
       <w>caso</w>
       <w>ceará</w>
       <w>celular</w>
@@ -366,6 +368,7 @@
       <w>conveniente</w>
       <w>convenientemente</w>
       <w>convenção</w>
+      <w>conversar</w>
       <w>convertidos</w>
       <w>copia</w>
       <w>copiar</w>
@@ -511,6 +514,7 @@
       <w>distribuição</w>
       <w>distrito</w>
       <w>divididas</w>
+      <w>divulgados</w>
       <w>divulgação</w>
       <w>documentação</w>
       <w>documento</w>
@@ -600,6 +604,7 @@
       <w>especificada</w>
       <w>especificado</w>
       <w>especificar</w>
+      <w>especificações</w>
       <w>especifique</w>
       <w>específica</w>
       <w>específicas</w>
@@ -774,6 +779,8 @@
       <w>fácil</w>
       <w>gabinete</w>
       <w>gablenzgasse</w>
+      <w>galeria</w>
+      <w>garagem</w>
       <w>garantia</w>
       <w>genérica</w>
       <w>gerado</w>
@@ -814,6 +821,7 @@
       <w>hartl</w>
       <w>helbor</w>
       <w>hoje</w>
+      <w>horizonte</w>
       <w>horário</w>
       <w>hospedagem</w>
       <w>hotmail</w>
@@ -835,6 +843,7 @@
       <w>imagem</w>
       <w>imagens</w>
       <w>imediatamente</w>
+      <w>imoveis</w>
       <w>impedirá</w>
       <w>imperium</w>
       <w>implantar</w>
@@ -891,6 +900,7 @@
       <w>início</w>
       <w>isso</w>
       <w>janeiro</w>
+      <w>joão</w>
       <w>julho</w>
       <w>junho</w>
       <w>junto</w>
@@ -1329,8 +1339,10 @@
       <w>recebeu</w>
       <w>recebida</w>
       <w>recebimento</w>
+      <w>recente</w>
       <w>recentemente</w>
       <w>recentes</w>
+      <w>recentimente</w>
       <w>recomendações</w>
       <w>recomeçar</w>
       <w>recuperada</w>
@@ -1516,6 +1528,7 @@
       <w>subtítulo</w>
       <w>sucesso</w>
       <w>sugestão</w>
+      <w>sugestões</w>
       <w>suporta</w>
       <w>suportado</w>
       <w>suportados</w>
@@ -1697,6 +1710,7 @@
       <w>última</w>
       <w>últimas</w>
       <w>último</w>
+      <w>últimos</w>
       <w>único</w>
     </words>
   </dictionary>
