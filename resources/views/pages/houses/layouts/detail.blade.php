@@ -185,7 +185,7 @@
                         <div hidden class="form-group">
                             <label class="form-control-label font-weight-bold" for="link">Link</label>
                             <div class="input-group input-group-merge validate-link">
-                                <input type="url" id="link" name="link" class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" value="{{ old('link', 'https://www.youtube.com/'/*Illuminate\Support\Facades\Request::url()*/) }}" minlength="3" maxlength="191" @if ($errors->has('link')) autofocus @endif>
+                                <input type="url" id="link" name="link" class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" value="{{ old('link', 'https://www.youtube.com/'/*request()->url()*/) }}" minlength="3" maxlength="191" @if ($errors->has('link')) autofocus @endif>
                             </div>
                             @if ($errors->has('link'))
                                 <!-- alerta de erro -->

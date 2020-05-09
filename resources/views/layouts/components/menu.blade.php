@@ -31,11 +31,9 @@
             <div class="row align-items-center">
                 <!-- título -->
                 <div class="col-8 col-md-8 col-lg-4">
-                    <h1 class="mb-3">
-                        <span class="text-white h2 mb-0">
-                            <strong>Casa Online<span class="text-danger">.</span></strong>
-                        </span>
-                    </h1>
+                    <div class="text-white h2 mb-0">
+                        <strong>Casa Online<span class="text-danger">.</span></strong>
+                    </div>
                 </div>
                 <!-- menu -->
                 <div class="col-4 col-md-4 col-lg-8">
@@ -49,9 +47,9 @@
                         <!-- opções -->
                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                             <li><a href="{{ route('home.page') }}">Home</a></li>
-                            <li><a href="javascript:void(0)">Lançamentos</a></li>
-                            <li><a href="javascript:void(0)">Usados</a></li>
-                            <li><a href="javascript:void(0)">Aluguel</a></li>
+                            <li><a href="{{ route('house.release') }}">Lançamentos</a></li>
+                            <li><a href="{{ route('house.used') }}">Usados</a></li>
+                            <li><a href="{{ route('house.rental') }}">Aluguel</a></li>
                             <li><a href="javascript:void(0)">Notícias</a></li>
                             <li><a href="javascript:void(0)">Sobre</a></li>
                             @if (App\Models\About\Information\Description::getDescription()['email'])

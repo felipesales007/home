@@ -1,4 +1,4 @@
-<div class="site-section site-section-sm bg-light">
+<div class="site-section site-section-sm mb--100 mb-lg-3 {{ request()->segment(count(request()->segments())) == 'detalhes' ? 'bg-light' : 'bg-white' }}">
     <div class="container">
         <!-- título -->
         <div class="row">

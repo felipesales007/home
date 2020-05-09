@@ -31,15 +31,35 @@ class HouseController extends Controller
      *
      * @return Factory|RedirectResponse|View
      */
-    public function show()
+    public function release()
     {
         $this->permissionBlock();
 
-        if (Description::getDescription()['email']) {
-            return view('pages.contact.page');
-        }
+        return view('pages.houses.page');
+    }
 
-        return back()->with('notify', json_encode(NotifyHelpers::info_top_center('fas fa-exclamation-triangle', 'Sistema sem e-mail cadastrado.')));
+    /**
+     * Display the specified resource.
+     *
+     * @return Factory|RedirectResponse|View
+     */
+    public function used()
+    {
+        $this->permissionBlock();
+
+        return view('pages.houses.page');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @return Factory|RedirectResponse|View
+     */
+    public function rental()
+    {
+        $this->permissionBlock();
+
+        return view('pages.houses.page');
     }
 
     /**
@@ -51,11 +71,6 @@ class HouseController extends Controller
     public function detail(Request $request)
     {
         $this->permissionBlock();
-
-        //$post  = Post::getPosts()->find($request['id']);
-        //$items = Item::getItems($post->id ?? null);
-
-        //$this->permissionHasPage($post);
 
         return view('pages.houses.detail');
     }

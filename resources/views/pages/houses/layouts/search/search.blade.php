@@ -4,20 +4,22 @@
         <div class="row">
             <form class="form-search form-search-top col-md-12">
                 <div class="row align-items-end">
-                    <!-- oferta -->
-                    <div class="col-md-2">
-                        <label for="types-offer">Tipo de oferta</label>
-                        <div class="select-wrap">
-                            <select id="types-offer" name="types_offer" class="form-control d-block">
-                                <option value="1">Aluguel</option>
-                                <option value="2">Lançamentos</option>
-                                <option value="3">Usados</option>
-                            </select>
+                    @if (request()->segment(count(request()->segments())) == 'home')
+                        <!-- oferta -->
+                        <div class="col-md-2 mb-4 mb-lg-0">
+                            <label for="types-offer">Tipo de oferta</label>
+                            <div class="select-wrap">
+                                <select id="types-offer" name="types_offer" class="form-control d-block">
+                                    <option value="1">Aluguel</option>
+                                    <option value="2">Lançamentos</option>
+                                    <option value="3">Usados</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
+                    @endif
 
                     <!-- imóvel -->
-                    <div class="col-md-2">
+                    <div class="mb-4 mb-lg-0 {{ request()->segment(count(request()->segments())) == 'home' ? 'col-md-2' : 'col-md-3' }}">
                         <label for="types-house">Tipo de imóvel</label>
                         <div class="select-wrap">
                             <select id="types-house" name="types_house" class="form-control d-block">
@@ -30,7 +32,7 @@
                     </div>
 
                     <!-- cidade -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-4 mb-lg-0">
                         <label for="select-city">Selecione a cidade</label>
                         <div class="select-wrap">
                             <select name="select_city" id="select-city" class="form-control d-block">
@@ -43,7 +45,7 @@
                     </div>
 
                     <!-- bairro -->
-                    <div class="col-md-3">
+                    <div class="mb-4 mb-lg-0 {{ request()->segment(count(request()->segments())) == 'home' ? 'col-md-3' : 'col-md-4' }}">
                         <label for="select-neighborhood">Selecione o bairro</label>
                         <div class="select-wrap">
                             <select name="select_neighborhood" id="select-neighborhood" class="form-control d-block">

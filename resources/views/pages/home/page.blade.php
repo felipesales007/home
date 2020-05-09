@@ -7,11 +7,11 @@
     @include('pages.home.layouts.presentation')
 
     <!-- buscar -->
-    @include('pages.home.layouts.search')
+    @include('pages.houses.layouts.search.search')
 
     <!-- casas -->
-    @include('pages.home.layouts.houses-module')
-    @include('pages.home.layouts.houses-list')
+    @include('pages.houses.layouts.houses-module')
+    @include('pages.houses.layouts.houses-list')
 
     <!-- notícias -->
     @include('pages.home.layouts.blog')
