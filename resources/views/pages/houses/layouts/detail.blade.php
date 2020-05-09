@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <!-- card casa -->
-            <div class="col-lg-8">
+            <div class="col-lg-8 mb-5 mb-lg-0">
                 <!-- slide -->
                 <div class="slide-one-item home-slider owl-carousel bg-light">
                     <img src="{{ url('template/images/casa-1.png') }}" class="img-fluid img-fluid-detail" alt="">
@@ -148,19 +148,24 @@
 
             <!-- card contato -->
             <div class="col-lg-4">
-                <!-- whatsapp -->
+                <!-- telefone -->
                 <div class="bg-white widget border rounded">
+                    <h3 class="h4 text-black widget-title mb-3">Contato</h3>
+                    <i class="fas fa-phone mr-1"></i>
+                    (71) 99140-2371
+                </div>
+
+                <!-- whatsapp -->
+                <div class="bg-white widget border rounded mt-4">
                     <h3 class="h4 text-black widget-title mb-3">Contato por whatsapp</h3>
-                    <a href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/[^0-9]/', '', App\Models\About\Information\Description::getDescription()['whatsapp']) }}&text=Gostaria de saber mais sobre o imóvel Condomínio Varandas do Vale https://www.youtube.com" target="_blank" class="text-success">
-                        <i class="fab fa-whatsapp mr-2"></i>
+                    <a href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/[^0-9]/', '', App\Models\About\Information\Description::getDescription()['whatsapp']) }}&text=Gostaria de saber mais sobre o imóvel Condomínio Varandas do Vale https://www.youtube.com" target="_blank" class="btn btn-success text-white">
+                        <i class="fab fa-whatsapp mr-1"></i>
                         Conversar
                     </a>
                 </div>
 
-                <div class="text-center py-4">ou</div>
-
                 <!-- e-mail -->
-                <div class="bg-white widget border rounded">
+                <div class="bg-white widget border rounded mt-4">
                     <h3 class="h4 text-black widget-title mb-3">Contato por e-mail</h3>
                     <form id="form-contact" role="form" autocomplete="off" novalidate>
                         @csrf
