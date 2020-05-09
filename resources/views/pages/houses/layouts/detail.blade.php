@@ -142,6 +142,10 @@
                                 <img src="{{ url('template/images/img_4.jpg') }}" class="img-fluid img-fluid-gallery" alt="">
                             </a>
                         </div>
+
+                        <!-- vídeos -->
+                        <iframe src="https://www.youtube.com/embed/7o9MjRcjTg0{{--{{ substr($item['youtube'], strrpos($item['youtube'], '=') + 1) }}--}}" class="mt-3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="250px"></iframe>
+                        <iframe src="https://www.youtube.com/embed/YSsDr2YrB-U{{--{{ substr($item['youtube'], strrpos($item['youtube'], '=') + 1) }}--}}" class="mt-3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="250px"></iframe>
                     </div>
                 </div>
             </div>

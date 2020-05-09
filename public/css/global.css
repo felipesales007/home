@@ -427,6 +427,17 @@
     height: 24px;
 }
 
+.fe-social-search {
+    top: -150px;
+    background-color: #364e68;
+    border-color: #364e68;
+    z-index: 1;
+}
+
+.fe-social-search:hover {
+    opacity: .8;
+}
+
 .fe-social-mobile {
     bottom: 0;
     position: absolute;

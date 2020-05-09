@@ -1,5 +1,25 @@
 <div class="site-section site-section-sm pb-0">
     <div class="container">
+        <!-- social -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pos-absolute right-0 mr-1 mr-sm-0 mr-md-0 mr-lg-0">
+                    <a href="javascript:void(0)" target="_blank" class="btn text-white fe-social-search">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="javascript:void(0)" target="_blank" class="btn text-white fe-social-search">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="javascript:void(0)" target="_blank" class="btn text-white fe-social-search">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="javascript:void(0)" target="_blank" class="btn text-white fe-social-search">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- seleção -->
         <div class="row">
             <form class="form-search form-search-top col-md-12">

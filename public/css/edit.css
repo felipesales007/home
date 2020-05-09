@@ -152,6 +152,7 @@ select {
 
 .img-fluid-gallery {
     width: 100%;
+    padding: 3px;
 }
 
 /*
@@ -220,5 +221,6 @@ select {
 
     .img-fluid-gallery {
         height: 190px;
+        padding: 15px 0 0 0;
     }
 }
