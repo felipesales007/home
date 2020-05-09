@@ -14,7 +14,7 @@
             <!-- card -->
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="card-content-blog">
-                    <a href="javascript:void(0)">
+                    <a href="{{ route('blog.detail') }}">
                         <img src="{{ url('template/images/caixa.jpg') }}" class="img-fluid img-fluid-module" alt="">
                         <div class="p-4 bg-white card-blog">
                             <span class="d-block text-secondary small font-weight-bold mb-10">
@@ -31,7 +31,7 @@
             <!-- card -->
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="card-content-blog">
-                    <a href="javascript:void(0)">
+                    <a href="{{ route('blog.detail') }}">
                         <img src="{{ url('template/images/ssa.jpeg') }}" class="img-fluid img-fluid-module" alt="">
                         <div class="p-4 bg-white card-blog">
                             <span class="d-block text-secondary small font-weight-bold mb-10">
@@ -48,7 +48,7 @@
             <!-- card -->
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="card-content-blog">
-                    <a href="javascript:void(0)">
+                    <a href="{{ route('blog.detail') }}">
                         <img src="{{ url('template/images/alpha.jpg') }}" class="img-fluid img-fluid-module" alt="">
                         <div class="p-4 bg-white card-blog">
                             <span class="d-block text-secondary small font-weight-bold mb-10">
@@ -65,7 +65,7 @@
 
         <!-- botão -->
         <div class="col-md-2 mx-auto mb-5 mb-lg-0">
-            <a href="javascript:void(0)" class="btn btn-success text-white btn-block">Mais notícias</a>
+            <a href="{{ route('blog.page') }}" class="btn btn-success text-white btn-block">Mais notícias</a>
         </div>
     </div>
 </div>

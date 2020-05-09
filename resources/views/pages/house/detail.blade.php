@@ -4,9 +4,9 @@
 @section('content')
 
     <!-- detalhes -->
-    @include('pages.houses.layouts.detail')
+    @include('pages.house.layouts.detail')
 
     <!-- últimos divulgados -->
-    @include('pages.houses.layouts.related')
+    @include('pages.house.layouts.related')
 
 @endsection

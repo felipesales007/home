@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'Imóveis')
 
 @section('content')
 
     <!-- apresentação -->
-    @include('pages.home.layouts.presentation')
+    @include('pages.house.layouts.presentation')
 
     <!-- buscar -->
     @include('pages.house.layouts.search.search')
@@ -13,7 +13,7 @@
     @include('pages.house.layouts.house-module')
     @include('pages.house.layouts.house-list')
 
-    <!-- notícias -->
-    @include('pages.blog.layouts.recent')
+    <!-- últimos divulgados -->
+    @include('pages.house.layouts.related')
 
 @endsection

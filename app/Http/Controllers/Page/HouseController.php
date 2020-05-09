@@ -35,7 +35,7 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.houses.page');
+        return view('pages.house.page');
     }
 
     /**
@@ -47,7 +47,7 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.houses.page');
+        return view('pages.house.page');
     }
 
     /**
@@ -59,7 +59,7 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.houses.page');
+        return view('pages.house.page');
     }
 
     /**
@@ -72,7 +72,7 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.houses.detail');
+        return view('pages.house.detail');
     }
 
     /**

@@ -444,6 +444,10 @@
     padding: 35px;
 }
 
+.fe-pagination-blog {
+    margin-top: -70px;
+}
+
 /*
 =========================================================
 * desktop screen
@@ -465,5 +469,11 @@
 @media (max-width: 991px) {
     .fe-mobile-none {
         display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .fe-pagination-blog {
+        margin-top: -5px;
     }
 }

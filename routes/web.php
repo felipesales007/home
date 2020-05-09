@@ -20,5 +20,7 @@ Route::get ('imoveis/lancamentos', ['as' => 'house.release', 'uses' => 'Page\Hou
 Route::get ('imoveis/usados',      ['as' => 'house.used',    'uses' => 'Page\HouseController@used']);
 Route::get ('imoveis/aluguel',     ['as' => 'house.rental',  'uses' => 'Page\HouseController@rental']);
 Route::get ('imoveis/detalhes',    ['as' => 'house.detail',  'uses' => 'Page\HouseController@detail']);
+Route::get ('noticias',            ['as' => 'blog.page',     'uses' => 'Page\BlogController@show']);
+Route::get ('noticias/detalhes',   ['as' => 'blog.detail',   'uses' => 'Page\BlogController@detail']);
 Route::get ('contato',             ['as' => 'contact.page',  'uses' => 'Page\ContactController@show']);
 Route::post('contato/email',       ['as' => 'contact.email', 'uses' => 'Page\ContactController@email']);
