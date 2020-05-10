@@ -444,8 +444,36 @@
     padding: 35px;
 }
 
+.fe-social-mobile a:hover,
+.fe-social-mobile a:focus,
+.fe-social-mobile a:active {
+    color: #ff0032;
+}
+
 .fe-pagination-blog {
     margin-top: -70px;
+}
+
+.fe-star {
+    position: relative;
+    float: right;
+    top: 35px;
+    right: 5px;
+    color: #ff0032;
+    font-size: 15px;
+    cursor: default;
+    transition: all .6s ease;
+    opacity: .3;
+    z-index: 4;
+}
+
+.fe-star-default {
+    color: #adb5bd;
+    opacity: .5;
+}
+
+.fe-star:hover {
+    opacity: 1;
 }
 
 /*

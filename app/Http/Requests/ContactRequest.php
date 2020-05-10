@@ -28,6 +28,7 @@ class ContactRequest extends FormRequest
             'link'                 => ['nullable', 'min:3', 'max:191', 'url'],
             'name'                 => ['required', 'min:3', 'max:191'],
             'email'                => ['required', 'max:191', 'email'],
+            'phone'                => ['nullable', 'min:14', 'max:15', 'phones'],
             'message'              => ['required', 'min:10', 'max:1500'],
             'g-recaptcha-response' => ['required', 'captcha']
         ];

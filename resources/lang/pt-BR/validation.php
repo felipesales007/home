@@ -115,6 +115,37 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Mensagem de validação personalizada
+    |--------------------------------------------------------------------------
+    */
+
+    'alpha_space'         => 'O campo :attribute deve ter somente letras e espaços.',
+    'alpha_digit'         => 'O campo :attribute deve ter somente letras, espaços e caracteres permitidos.',
+    'alpha_digit_number'  => 'O campo :attribute deve ter somente letras, números, espaços e caracteres permitidos.',
+    'alpha_group'         => 'O campo :attribute deve ter somente letras minúsculas e caracteres permitidos.',
+    'alpha_url'           => 'O campo :attribute deve ter somente letras minúsculas e caracteres permitidos.',
+    'alpha_route'         => 'O campo :attribute deve ter somente letras minúsculas e caracteres permitidos.',
+    'alpha_controller'    => 'O campo :attribute deve ter somente letras e caracteres permitidos.',
+    'alpha_icon'          => 'O campo :attribute deve ter somente letras, espaços e caracteres permitidos.',
+    'number_digit'        => 'O campo :attribute deve ter somente números, ponto e traço.',
+    'number_comma'        => 'O campo :attribute deve ter somente números e vírgula.',
+    'format_cpf'          => 'O campo :attribute está em um formato incorreto.',
+    'format_cnpj'         => 'O campo :attribute está em um formato incorreto.',
+    'format_cpf_cnpj'     => 'O campo :attribute está em um formato incorreto.',
+    'format_nis'          => 'O campo :attribute está em um formato incorreto.',
+    'format_cep'          => 'O campo :attribute está em um formato incorreto.',
+    'format_controller'   => 'O campo :attribute está em um formato incorreto.',
+    'phones'              => 'O campo :attribute deve ter um número de telefone ou celular válido.',
+    'cpf'                 => 'O campo :attribute deve ter um número de cpf válido.',
+    'cnpj'                => 'O campo :attribute deve ter um número de cnpj válido.',
+    'cpf_npj'             => 'O campo :attribute deve ter um número de cpf ou cnpj válido.',
+    'cnh'                 => 'O campo :attribute deve ter um número de cnh válido.',
+    'voter_title'         => 'O campo :attribute deve ter um número de título de eleitor válido.',
+    'nis'                 => 'O campo :attribute deve ter um número de nis válido.',
+    'decimal'             => 'O campo :attribute deve ter um número decimal.',
+
+    /*
+    |--------------------------------------------------------------------------
     | Linhas de Linguagem de Validação Personalizada
     |--------------------------------------------------------------------------
     |
@@ -147,6 +178,7 @@ return [
         'link'    => 'link',
         'name'    => 'nome',
         'email'   => 'e-mail',
+        'phone'   => 'telefone',
         'message' => 'mensagem',
     ],
 

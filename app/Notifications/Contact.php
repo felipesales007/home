@@ -51,6 +51,11 @@ class Contact extends Notification
         }
 
         $mailMessage->line($this->message->message . '<br><br>');
+
+        if ($this->message->phone) {
+            $mailMessage->line('<b>Telefone: </b>' . $this->message->phone);
+        }
+
         $mailMessage->line('<b>E-mail para resposta: </b><a href="mailto:' . $this->message->email . '">' . $this->message->email . '</a>');
         $mailMessage->action('Acessar site', route('home.page'));
 

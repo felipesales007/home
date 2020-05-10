@@ -64,15 +64,11 @@
 
                     <!-- mais dados -->
                     <div class="row mb-5">
-                        <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                        <div class="col-md-6 col-lg-6 text-center border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text">Tipo de imóvel</span>
                             <strong class="d-block">Condomínio</strong>
                         </div>
-                        <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
-                            <span class="d-inline-block text-black mb-0 caption-text">Ano de Construção</span>
-                            <strong class="d-block">2015</strong>
-                        </div>
-                        <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                        <div class="col-md-6 col-lg-6 text-center border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text">Condomínio</span>
                             <strong class="d-block">R$ 520</strong>
                         </div>
@@ -184,8 +180,9 @@
                         <!-- imóvel -->
                         <div hidden class="form-group">
                             <label class="form-control-label font-weight-bold" for="house">Imóvel</label>
+                            <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-house">
-                                <input type="text" id="house" name="house" class="form-control {{ $errors->has('house') ? 'is-invalid' : '' }}" value="{{ old('house', 'Condomínio Varandas do Vale') }}" minlength="3" maxlength="191" @if ($errors->has('house')) autofocus @endif>
+                                <input readonly type="text" id="house" name="house" class="form-control {{ $errors->has('house') ? 'is-invalid' : '' }}" value="{{ old('house', 'Condomínio Varandas do Vale') }}" minlength="3" maxlength="191" @if ($errors->has('house')) autofocus @endif>
                             </div>
                             @if ($errors->has('house'))
                                 <!-- alerta de erro -->
@@ -196,8 +193,9 @@
                         <!-- link -->
                         <div hidden class="form-group">
                             <label class="form-control-label font-weight-bold" for="link">Link</label>
+                            <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-link">
-                                <input type="url" id="link" name="link" class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" value="{{ old('link', 'https://www.youtube.com/'/*request()->url()*/) }}" minlength="3" maxlength="191" @if ($errors->has('link')) autofocus @endif>
+                                <input readonly type="url" id="link" name="link" class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" value="{{ old('link', 'https://www.youtube.com/'/*request()->url()*/) }}" minlength="3" maxlength="191" @if ($errors->has('link')) autofocus @endif>
                             </div>
                             @if ($errors->has('link'))
                                 <!-- alerta de erro -->
@@ -208,6 +206,7 @@
                         <!-- nome -->
                         <div class="form-group">
                             <label class="form-control-label font-weight-bold" for="name">Nome</label>
+                            <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-name">
                                 <input type="text" id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="ex.: Felipe Sales" value="{{ old('name') }}" minlength="3" maxlength="191" required onkeypress="return onlyLetters(event);" onkeyup="letterUppercase('name');" @if ($errors->has('name')) autofocus @endif>
                             </div>
@@ -220,6 +219,7 @@
                         <!-- e-mail -->
                         <div class="form-group">
                             <label class="form-control-label font-weight-bold" for="email">E-mail</label>
+                            <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-email">
                                 <input type="email" id="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="ex.: exemplo@dominio.com" value="{{ old('email') }}" maxlength="191" required autocomplete="email" @if ($errors->has('email')) autofocus @endif>
                             </div>
@@ -229,9 +229,22 @@
                             @endif
                         </div>
 
+                        <!-- telefone -->
+                        <div class="form-group">
+                            <label class="form-control-label font-weight-bold" for="phone">Telefone</label>
+                            <div class="input-group input-group-merge validate-phone">
+                                <input type="tel" id="phone" name="phone" class="form-control mask-phones {{ $errors->has('phone') ? 'is-invalid' : '' }}" placeholder="ex.: (71) 98888-8888" value="{{ old('phone') }}" minlength="14" maxlength="15" @if ($errors->has('phone')) autofocus @endif>
+                            </div>
+                            @if ($errors->has('phone'))
+                                <!-- alerta de erro -->
+                                <div class="invalid-feedback" role="alert">{{ $errors->first('phone') }}</div>
+                            @endif
+                        </div>
+
                         <!-- mensagem -->
                         <div class="form-group">
                             <label class="form-control-label font-weight-bold" for="message">Mensagem</label>
+                            <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group validate-message">
                                 <textarea id="message" name="message" rows="4" resize="none" class="form-control form-control-textarea {{ $errors->has('message') ? 'is-invalid' : '' }}" placeholder="ex.: Olá tudo bem, gostaria de entrar em contato com você." minlength="10" maxlength="1500" required onkeyup="firstLetterUppercase(this);" @if ($errors->has('message')) autofocus @endif>{{ old('message') }}</textarea>
                             </div>

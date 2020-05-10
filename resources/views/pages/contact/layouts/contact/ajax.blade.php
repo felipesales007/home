@@ -15,6 +15,7 @@
                         dataType: 'json',
                         success: function (data) {
                             $('#button-send-contact').removeAttr('disabled', 'disabled').removeClass('disabled').html('Enviar mensagem');
+                            grecaptcha.reset();
                             $('#form-contact').trigger('reset');
                             removeValidate();
                             notify(data);

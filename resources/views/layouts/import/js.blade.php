@@ -15,6 +15,8 @@
 <!-- jquery -->
 <script src="{{ asset('js/jquery/validate/jquery.validate.js') }}"></script>
 <script src="{{ asset('js/jquery/validate/additional-methods.js') }}"></script>
+<script src="{{ asset('js/jquery/mask/jquery.mask.min.js') }}"></script>
+<script src="{{ asset('js/jquery/mask/jquery.maskMoney.min.js') }}"></script>
 
 <!-- plugin -->
 <script src="{{ asset('js/plugins/bootstrap-notify.min.js') }}"></script>

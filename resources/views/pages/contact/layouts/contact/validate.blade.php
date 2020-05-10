@@ -22,6 +22,11 @@
                     maxlength: 191,
                     email: true,
                 },
+                phone: {
+                    minlength: 14,
+                    maxlength: 15,
+                    phones: true,
+                },
                 message: {
                     required: true,
                     minlength: 10,
@@ -47,6 +52,11 @@
                     required:  'O campo e-mail é obrigatório.',
                     maxlength: 'O campo e-mail não pode ser superior a {0} caracteres.',
                     email:     'O campo e-mail deve ser um endereço de e-mail válido.',
+                },
+                phone: {
+                    minlength: 'O campo telefone deve ter pelo menos 10 dígitos.',
+                    maxlength: 'O campo telefone não pode ser superior a 11 dígitos.',
+                    phones:    'O campo telefone deve ter um número de telefone ou celular válido.',
                 },
                 message: {
                     required:  'O campo mensagem é obrigatório.',
