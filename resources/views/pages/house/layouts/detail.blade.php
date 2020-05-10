@@ -1,12 +1,8 @@
-<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{ url('template/images/casa-1.png') }});" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay fe-img-center" style="background-image: url({{ url('template/images/casa-1.png') }});" data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
-                <span class="d-inline-block text-white px-3 mb-3 property-offer-type rounded">Detalhes do imóvel</span>
                 <h1 class="mb-2">Condomínio Varandas do Vale</h1>
-                <p class="mb-5">
-                    <strong class="h2 text-success font-weight-bold">R$ 250.000</strong>
-                </p>
             </div>
         </div>
     </div>
@@ -28,9 +24,18 @@
                 <!-- informações -->
                 <div class="bg-white property-body border-bottom border-left border-right card-house-detail">
                     <!-- especificações -->
-                    <div class="row mb-3">
+                    <div class="row mb-2">
+                        <div class="col-md-12 mb-3 mt--20">
+                            <strong class="h3 text-black">Condomínio Varandas do Vale</strong>
+                        </div>
+                        <div class="col-md-12">
+                            <span class="property-location fe-text-color d-block mb-3">
+                                <span class="property-icon icon-room"></span>
+                                Rua Dom João, Piatã, Salvador - BA
+                            </span>
+                        </div>
                         <div class="col-md-6">
-                            <strong class="text-success h1 mb-3">R$ 250.000</strong>
+                            <strong class="h3 text-success">R$ 250.000</strong>
                         </div>
                         <div class="col-md-6 mt-4 mt-lg-0">
                             <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">

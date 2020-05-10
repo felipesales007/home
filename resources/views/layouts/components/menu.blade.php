@@ -51,7 +51,6 @@
                             <li><a href="{{ route('house.used') }}">Usados</a></li>
                             <li><a href="{{ route('house.rental') }}">Aluguel</a></li>
                             <li><a href="{{ route('blog.page') }}">Notícias</a></li>
-                            <li><a href="javascript:void(0)">Sobre</a></li>
                             @if (App\Models\About\Information\Description::getDescription()['email'])
                                 <li><a href="{{ route('contact.page') }}">Contato</a></li>
                             @endif
