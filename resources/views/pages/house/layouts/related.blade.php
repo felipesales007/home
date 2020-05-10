@@ -1,5 +1,5 @@
-<div class="site-section site-section-sm mb--100 mb-lg-3 {{ request()->segment(count(request()->segments())) == 'detalhes' ? 'bg-light' : 'bg-white' }}">
-    <div class="container">
+<div class="site-section site-section-sm {{ request()->segment(count(request()->segments())) == 'detalhes' ? 'bg-light' : 'bg-white' }}">
+    <div class="container mb--100 mb-lg-3">
         <!-- título -->
         <div class="row">
             <div class="col-12">

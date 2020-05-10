@@ -5,6 +5,9 @@
                 <h1 class="mb-2">Condomínio Varandas do Vale</h1>
             </div>
         </div>
+        <div class="mt-20">
+            @include('layouts.components.return')
+        </div>
     </div>
 </div>
 
