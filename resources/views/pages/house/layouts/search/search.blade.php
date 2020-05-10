@@ -90,7 +90,7 @@
             <div class="col-md-12">
                 <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
                     <!-- modo de visualização -->
-                    <div class="ml-3 ml-md-2">
+                    <div class="ml-3 ml-md-2 fe-mobile-none">
                         <a href="javascript:void(0)" id="card-module" class="icon-view view-module active">
                             <span class="icon-view_module"></span>
                         </a>
