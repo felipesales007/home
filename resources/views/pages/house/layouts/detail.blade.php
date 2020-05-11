@@ -28,25 +28,23 @@
                 <div class="bg-white property-body border-bottom border-left border-right card-house-detail">
                     <!-- compartilhar -->
                     <div class="fe-share">
+                        <small>Compartilhar: </small>
                         <!-- whatsapp -->
                         <a href="https://api.whatsapp.com/send?text={{ request()->url() }}" target="_blank" class="fe-share-button whatsapp" title="Compartilhe no Whatsapp">
                             <i class="fab fa-whatsapp"></i>
-                            Compartilhar
                         </a>
                         <!-- facebook -->
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ request()->url() }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="fe-share-button facebook" title="Compartilhe no Facebook">
                             <i class="fab fa-facebook-square"></i>
-                            Compartilhar
                         </a>
                         <!-- twitter -->
                         <a href="https://twitter.com/intent/tweet?url={{ request()->url() }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="fe-share-button twitter" title="Compartilhe no Twitter">
                             <i class="fab fa-twitter"></i>
-                            Compartilhar
                         </a>
                     </div>
 
                     <!-- especificações -->
-                    <div class="row mb-2">
+                    <div class="row mb-2 mt-2">
                         <div class="col-md-12 mb-3 mt--20">
                             <strong class="h3 text-black">Condomínio Varandas do Vale</strong>
                         </div>

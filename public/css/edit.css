@@ -82,65 +82,12 @@ p br {
 
 /*
 =========================================================
-* share
-=========================================================
-*/
-
-.fe-share {
-    position: absolute;
-    right: 15px;
-    margin-top: -43px;
-    z-index: 2;
-}
-
-.fe-share-button.whatsapp {
-    background: #57ba63;
-}
-
-.fe-share-button.facebook {
-    background: #1877f2;
-}
-
-.fe-share-button.twitter {
-    background: #2ea1f2;
-}
-
-.fe-share-button {
-    padding: 3px 8px 3px 8px;
-    margin-right: 2px;
-    color: #fff !important;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    white-space: nowrap;
-    cursor: pointer;
-    border-radius: 3px;
-    -webkit-font-smoothing: antialiased;
-}
-
-.fe-share-button i {
-    position: relative;
-    top: 1px;
-    margin-right: 4px;
-    font-size: 13px;
-    font-weight: 100;
-}
-
-/*
-=========================================================
 * others
 =========================================================
 */
 
 select {
     background: white url('../images/default/others/arrow-down.png') no-repeat right;
-}
-
-.fe-recaptcha {
-    transform:scale(0.88);
-    -webkit-transform:scale(0.88);
-    transform-origin:0 0;
-    -webkit-transform-origin:0 0;
 }
 
 .property-thumbnail-module,
