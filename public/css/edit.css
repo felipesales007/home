@@ -30,6 +30,10 @@ p br {
     box-shadow: none !important;
 }
 
+.form-control::placeholder {
+    opacity: .4;
+}
+
 .alert-notify {
     display: flex !important;
     width: calc(100% - 30px);
