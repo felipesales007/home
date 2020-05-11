@@ -3,7 +3,7 @@
         <div class="row mt-lg-4">
             <!-- autor -->
             <div class="col-lg-6 text-left">
-                <p><span class="fe-mobile-none">Copyright</span> &copy; <script>document.write(new Date().getFullYear())</script>, Desenvolvido por <a href="https://www.felipesales.com.br/" target="_blank">Felipe Sales</a></p>
+                <p><span class="fe-mobile-none">Copyright</span> &copy; <script>document.write(new Date().getFullYear())</script>, Desenvolvido por <a href="https://www.zendigital.com.br" target="_blank">Zen Digital</a></p>
             </div>
 
             <!-- social -->
