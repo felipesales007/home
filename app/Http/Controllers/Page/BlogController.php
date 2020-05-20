@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\Publication\News\News;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class BlogController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.blog.page');
+        $news = News::getNews()->paginate(12);
+
+        return view('pages.blog.page', compact('news'));
     }
 
     /**
@@ -32,6 +35,11 @@ class BlogController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.blog.detail');
+        $news    = News::getNews()->find($request['id']);
+        $recents = News::getNews()->limit(3)->get();
+
+        $this->permissionHasPage($news);
+
+        return view('pages.blog.detail', compact('news', 'recents'));
     }
 }

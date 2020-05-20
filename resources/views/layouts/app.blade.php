@@ -21,7 +21,9 @@
         @include('layouts.components.menu')
 
         <!-- corpo -->
-        @yield('content')
+        <div class="main-content">
+            @yield('content')
+        </div>
 
         <!-- rodapé -->
         @include('layouts.components.footer')

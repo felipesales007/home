@@ -1,6 +1,7 @@
 <div id="menu" class="site-wrap">
     <!-- menu mobile -->
     <div class="site-mobile-menu">
+        <!-- ícone de fechar menu mobile -->
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close mt-3">
                 <span class="icon-close2 js-menu-toggle"></span>
@@ -9,18 +10,11 @@
         <div class="site-mobile-menu-body">
             <!-- social -->
             <div class="col-lg-12 text-right fe-social-mobile">
-                <a href="javascript:void(0)" target="_blank" class="pl-0 pr-3 fe-text-color">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3 fe-text-color">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3 fe-text-color">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="javascript:void(0)" target="_blank" class="pl-3 pr-3 fe-text-color">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+                @foreach (App\Models\About\Information\Social::getSocial() as $social)
+                    <a href="{{ $social['link'] }}" target="_blank" class="pl-0 pr-3 fe-text-color">
+                        <i class="{{ $social->getIcon->icon }}"></i>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
@@ -32,12 +26,13 @@
                 <!-- título -->
                 <div class="col-8 col-md-8 col-lg-4">
                     <div class="text-white h2 mb-0">
-                        <strong>Casa Online<span class="text-danger">.</span></strong>
+                        <strong>{{ config('app.name') }}<span class="text-danger">.</span></strong>
                     </div>
                 </div>
                 <!-- menu -->
                 <div class="col-4 col-md-4 col-lg-8">
                     <nav class="site-navigation text-right text-md-right" role="navigation">
+                        <!-- ícone de abrir menu mobile -->
                         <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3">
                             <a href="javascript:void(0)" class="site-menu-toggle js-menu-toggle text-white">
                                 <span class="icon-menu h3"></span>

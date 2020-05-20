@@ -311,8 +311,13 @@
     background-color: rgba(23, 43, 77, 0.2);
 }
 
-.fe-text-color {
+.fe-text-color,
+.fe-text-color a {
     color: rgba(0, 0, 0, 0.6);
+}
+
+.fe-text-color a[target] {
+    color: #364e68 !important;
 }
 
 /*

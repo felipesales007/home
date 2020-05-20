@@ -149,7 +149,7 @@ $(document).ready(function () {
     $('#menu a[href]').each(function() {
         let href = $(this).attr('href');
 
-        if (href === $(location).attr('href')) {
+        if (href === location.href.split("?")[0]) {
             $(this).parent().addClass('active');
         }
     });

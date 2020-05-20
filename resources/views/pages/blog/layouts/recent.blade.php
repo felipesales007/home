@@ -11,56 +11,24 @@
 
         <!-- três últimas -->
         <div class="row">
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="card-content-blog">
-                    <a href="{{ route('blog.detail') }}">
-                        <img src="{{ url('template/images/caixa.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        <div class="p-4 bg-white card-blog">
-                            <span class="d-block text-secondary small font-weight-bold mb-10">
-                                <i class="fas fa-calendar-alt mr-2"></i>
-                                20/04/2020
-                            </span>
-                            <h2 class="h5 text-black mb-3">Caixa libera crédito para financiamento</h2>
-                            <p class="fe-text-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-                        </div>
-                    </a>
+            @foreach ($recents as $recent)
+                <!-- card -->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="card-content-blog">
+                        <a href="{{ route('blog.detail', ['id' => $recent['id']]) }}">
+                            <img src="{{ $recent['background'] ? config('app.storage') . '/images/entities/' . config('app.id') . '/publication/news/' . $recent['background'] : url('images/default/others/image.png') }}" class="img-fluid img-fluid-module" alt="">
+                            <div class="p-4 bg-white card-blog">
+                                <span class="d-block text-secondary small font-weight-bold mb-10">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    {{ App\Helpers\FormatHelpers::datetime_to_date_br($recent['date']) }}
+                                </span>
+                                <h2 class="h5 text-black mb-3">{{ App\Helpers\FormatHelpers::limiter($recent['title'], 40) }}</h2>
+                                <div class="fe-text-color">{!! App\Helpers\FormatHelpers::limiter($recent['description'], 160) !!}</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="card-content-blog">
-                    <a href="{{ route('blog.detail') }}">
-                        <img src="{{ url('template/images/ssa.jpeg') }}" class="img-fluid img-fluid-module" alt="">
-                        <div class="p-4 bg-white card-blog">
-                            <span class="d-block text-secondary small font-weight-bold mb-10">
-                                <i class="fas fa-calendar-alt mr-2"></i>
-                                01/03/2020
-                            </span>
-                            <h2 class="h5 text-black mb-3">Vendas de imóveis cresce em Salvador</h2>
-                            <p class="fe-text-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="card-content-blog">
-                    <a href="{{ route('blog.detail') }}">
-                        <img src="{{ url('template/images/alpha.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        <div class="p-4 bg-white card-blog">
-                            <span class="d-block text-secondary small font-weight-bold mb-10">
-                                <i class="fas fa-calendar-alt mr-2"></i>
-                                16/01/2020
-                            </span>
-                            <h2 class="h5 text-black mb-3">Novo lançamento em Alpha Ville</h2>
-                            <p class="fe-text-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <!-- botão -->
