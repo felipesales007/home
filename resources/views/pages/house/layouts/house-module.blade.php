@@ -1,423 +1,56 @@
 <div id="card-house-module" class="site-section site-section-sm bg-light">
     <div class="container">
         <div class="row">
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-success">Lançamento</span>
-                                <span class="offer-type bg-danger">Recente</span>
+            @foreach ($houses as $house)
+                <!-- card -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="property-entry h-100">
+                        <a href="{{ route('house.detail', ['id' => $house['id']]) }}">
+                            <!-- informações -->
+                            <div class="property-thumbnail property-thumbnail-module">
+                                <!-- tag -->
+                                <div class="offer-type-wrap">
+                                    <span class="offer-type bg-success">{{ $house['offer'] }}</span>
+                                    @if (now()->diffInDays($house['created_at']) < 30)
+                                        <span class="offer-type bg-danger">Recente</span>
+                                    @endif
+                                </div>
+
+                                <!-- imagem -->
+                                <img src="{{ $house['image'] ? config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/houses/' . $house['image'] : url('images/default/others/image.png') }}" class="img-fluid img-fluid-module" alt="">
                             </div>
 
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/casa-1.png') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Varandas do Vale</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua Varandas da Serra, Novo Horizonte, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 250.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">165m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-warning">Aluguel</span>
+                            <!-- detalhes -->
+                            <div class="p-4 property-body">
+                                <h2 class="property-title">{{ $house['name'] }}</h2>
+                                <span class="property-location fe-text-color d-block mb-3">
+                                    <span class="property-icon icon-room"></span>
+                                    {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house['uf'] }}
+                                </span>
+                                <strong class="property-price text-primary mb-3 d-block text-success">{{ App\Helpers\FormatHelpers::to_real($house['value']) }}</strong>
+                                <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
+                                    <li class="text-center">
+                                        <span class="property-specs">Quartos</span>
+                                        <span class="property-specs-number">{{ $house['bedroom'] }}</span>
+                                    </li>
+                                    <li class="text-center">
+                                        <span class="property-specs">Banheiros</span>
+                                        <span class="property-specs-number">{{ $house['bathroom'] }}</span>
+                                    </li>
+                                    <li class="text-center">
+                                        <span class="property-specs">Garagem</span>
+                                        <span class="property-specs-number">{{ $house['garage'] }}</span>
+                                    </li>
+                                    <li class="text-center">
+                                        <span class="property-specs">Área</span>
+                                        <span class="property-specs-number">{{ $house['area'] }}m²</span>
+                                    </li>
+                                </ul>
                             </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/casa-3.png') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Flores do Campo</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua 2 de Julho, Pituba, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 1.200</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">54m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-info">Usado</span>
-                                <span class="offer-type bg-danger">Recente</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/casa-4.png') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Cores de Piatã</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua Dom João, Piatã, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 220.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">72m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-info">Usado</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/hero_bg_1.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Varandas do Vale</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua Varandas da Serra, Novo Horizonte, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 250.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">165m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-success">Lançamento</span>
-                                <span class="offer-type bg-danger">Recente</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/hero_bg_2.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Flores do Campo</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua 2 de Julho, Pituba, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 120.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">54m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-info">Usado</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/hero_bg_3.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Cores de Piatã</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua Dom João, Piatã, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 220.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">72m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-success">Lançamento</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/hero_bg_4.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Varandas do Vale</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua Varandas da Serra, Novo Horizonte, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 250.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">165m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-warning">Aluguel</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/img_5.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Flores do Campo</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua 2 de Julho, Pituba, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 1.200</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">1</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">54m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- card -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="property-entry h-100">
-                    <a href="{{ route('house.detail') }}">
-                        <!-- informações -->
-                        <div class="property-thumbnail property-thumbnail-module">
-                            <!-- tag -->
-                            <div class="offer-type-wrap">
-                                <span class="offer-type bg-info">Usado</span>
-                                <span class="offer-type bg-danger">Recente</span>
-                            </div>
-
-                            <!-- imagem -->
-                            <img src="{{ url('template/images/img_6.jpg') }}" class="img-fluid img-fluid-module" alt="">
-                        </div>
-
-                        <!-- detalhes -->
-                        <div class="p-4 property-body">
-                            <h2 class="property-title">Condomínio Cores de Piatã</h2>
-                            <span class="property-location fe-text-color d-block mb-3">
-                                <span class="property-icon icon-room"></span>
-                                Rua Dom João, Piatã, Salvador - BA
-                            </span>
-                            <strong class="property-price text-primary mb-3 d-block text-success">R$ 220.000</strong>
-                            <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
-                                <li class="text-center">
-                                    <span class="property-specs">Quartos</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Banheiros</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Garagem</span>
-                                    <span class="property-specs-number">2</span>
-                                </li>
-                                <li class="text-center">
-                                    <span class="property-specs">Área</span>
-                                    <span class="property-specs-number">72m²</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

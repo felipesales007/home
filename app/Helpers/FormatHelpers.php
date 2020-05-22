@@ -248,4 +248,48 @@ class FormatHelpers
     {
         return $string ? mb_convert_encoding(substr_replace($string, (strlen($string) > $quantity ? '...' : ''), $quantity), 'utf-8') : null;
     }
+
+    /**
+     * @param $string
+     * @return string|string[]
+     */
+    static function replaceQuill($string)
+    {
+        $remove = str_replace('<p>', '', $string);
+        $remove = str_replace('</p>', '', $remove);
+        $remove = str_replace('<u>', '', $remove);
+        $remove = str_replace('</u>', '', $remove);
+        $remove = str_replace('<s>', '', $remove);
+        $remove = str_replace('</s>', '', $remove);
+        $remove = str_replace('<strong>', '', $remove);
+        $remove = str_replace('</strong>', '', $remove);
+        $remove = str_replace('<em>', '', $remove);
+        $remove = str_replace('</em>', '', $remove);
+        $remove = str_replace('<br>', '', $remove);
+        $remove = str_replace('<ol>', '', $remove);
+        $remove = str_replace('</ol>', '', $remove);
+        $remove = str_replace('<li>', '', $remove);
+        $remove = str_replace('</li>', '', $remove);
+        $remove = str_replace('<ul>', '', $remove);
+        $remove = str_replace('</ul>', '', $remove);
+        $remove = str_replace('<p class="ql-indent-1">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-2">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-3">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-4">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-5">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-6">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-7">', '', $remove);
+        $remove = str_replace('<p class="ql-indent-8">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-1">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-2">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-3">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-4">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-5">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-6">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-7">', '', $remove);
+        $remove = str_replace('<li class="ql-indent-8">', '', $remove);
+        $remove = str_replace('</li>', '', $remove);
+
+        return $remove;
+    }
 }
