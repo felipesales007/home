@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\Presentation\SlideOne;
 use App\Models\Publication\News\News;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;
@@ -19,7 +20,8 @@ class HomeController extends Controller
         $this->permissionBlock();
 
         $recents = News::getNews()->limit(3)->get();
+        $slides  = SlideOne::getSlidesOne();
 
-        return view('index', compact('recents'));
+        return view('index', compact('slides', 'recents'));
     }
 }
