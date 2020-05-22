@@ -170,6 +170,17 @@ $('#card-list').on('click', function () {
     $('#card-house-module').addClass('d-none');
 });
 
+// house filter listing event
+$('#card-all').on('click', function () {
+    $(this).addClass('active');
+    $('#card-recent').removeClass('active');
+});
+
+$('#card-recent').on('click', function () {
+    $(this).addClass('active');
+    $('#card-all').removeClass('active');
+});
+
 // JQuery Mask masks for the system
 $(function () {
     // mask for phone and cellphone

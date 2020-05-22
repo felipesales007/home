@@ -13,11 +13,6 @@ class News extends Model
         return News::where('entity_id', config('app.id'))->orderBy('date', 'desc');
     }
 
-    /**
-     * Retornar um dado aleatória do armazenamento.
-     *
-     * @return mixed
-     */
     static function getRandomImage()
     {
         if (News::where('entity_id', config('app.id'))->count()) {
