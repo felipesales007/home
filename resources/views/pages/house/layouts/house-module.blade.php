@@ -1,6 +1,9 @@
 <div id="card-house-module" class="site-section site-section-sm bg-light">
     <div class="container">
         <div class="row">
+            @if (!$houses[0])
+                <div class="fe-center-x">não há imóveis</div>
+            @endif
             @foreach ($houses as $house)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-4">

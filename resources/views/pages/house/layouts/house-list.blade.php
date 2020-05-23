@@ -1,5 +1,8 @@
 <div id="card-house-list" class="site-section site-section-sm bg-light d-none">
     <div class="container">
+        @if (!$houses[0])
+            <div class="text-center">não há imóveis</div>
+        @endif
         @foreach ($houses as $house)
             <!-- card -->
             <div class="row mb-4">

@@ -33,7 +33,7 @@ class House extends Model
     static function getHousesCitiesOptions()
     {
         $array   = [];
-        $options = House::where('entity_id', config('app.id'))->get();
+        $options = House::where('entity_id', config('app.id'))->where('status', 1)->get();
 
         foreach ($options as $option) {
             $array[$option->city] = $option->city;
@@ -45,7 +45,7 @@ class House extends Model
     static function getHousesNeighborhoodsOptions()
     {
         $array   = [];
-        $options = House::where('entity_id', config('app.id'))->get();
+        $options = House::where('entity_id', config('app.id'))->where('status', 1)->get();
 
         foreach ($options as $option) {
             $array[$option->neighborhood] = $option->neighborhood;

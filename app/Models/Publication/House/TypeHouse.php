@@ -24,7 +24,11 @@ class TypeHouse extends Model
     static function getTypesHousesOptions()
     {
         $array   = [];
-        $options = TypeHouse::where('entity_id', config('app.id'))->get();
+        $options = TypeHouse::select('publication_houses_types_houses.*')
+            ->join('publication_houses', 'publication_houses.type_house_id', 'publication_houses_types_houses.id')
+            ->where('publication_houses_types_houses.entity_id', config('app.id'))
+            ->where('status', 1)
+            ->get();
 
         foreach ($options as $option) {
             $array[$option->id] = $option->name;

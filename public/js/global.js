@@ -228,3 +228,8 @@ $(function () {
     });
     $('.mask-date-selectonfocus').mask('00/00/0000', {selectOnFocus: true});
 });
+
+// pagination house focus
+if (location.href.indexOf('?page=') >= 0) {
+    document.getElementById('card-house-module').scrollIntoView();
+}
