@@ -81,7 +81,7 @@
             </div>
 
             <!-- filtro -->
-            <div class="row">
+            <div id="filter-houses" class="row">
                 <div class="col-md-12">
                     <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
                         <!-- modo de visualização -->

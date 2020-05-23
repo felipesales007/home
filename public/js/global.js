@@ -158,6 +158,7 @@ $(document).ready(function () {
 // house card listing event
 $('#card-module').on('click', function () {
     $(this).addClass('active');
+    sessionStorage.setItem('houses.card', 0);
     $('#card-list').removeClass('active');
     $('#card-house-module').removeClass('d-none');
     $('#card-house-list').addClass('d-none');
@@ -165,10 +166,23 @@ $('#card-module').on('click', function () {
 
 $('#card-list').on('click', function () {
     $(this).addClass('active');
+    sessionStorage.setItem('houses.card', 1);
     $('#card-module').removeClass('active');
     $('#card-house-list').removeClass('d-none');
     $('#card-house-module').addClass('d-none');
 });
+
+if (sessionStorage.getItem('houses.card') === '1') {
+    $('#card-list').addClass('active');
+    $('#card-module').removeClass('active');
+    $('#card-house-list').removeClass('d-none');
+    $('#card-house-module').addClass('d-none');
+} else {
+    $('#card-module').addClass('active');
+    $('#card-list').removeClass('active');
+    $('#card-house-module').removeClass('d-none');
+    $('#card-house-list').addClass('d-none');
+}
 
 // house filter listing event
 $('#card-all').on('click', function () {
@@ -231,5 +245,5 @@ $(function () {
 
 // pagination house focus
 if (location.href.indexOf('?page=') >= 0) {
-    document.getElementById('card-house-module').scrollIntoView();
+    document.getElementById('filter-houses').scrollIntoView();
 }
