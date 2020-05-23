@@ -22,7 +22,9 @@
 
         <!-- corpo -->
         <div class="main-content">
-            @yield('content')
+            <div class="mb-50">
+                @yield('content')
+            </div>
         </div>
 
         <!-- rodapé -->

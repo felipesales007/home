@@ -27,7 +27,7 @@
                                     <span class="property-icon icon-room"></span>
                                     {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house['uf'] }}
                                 </span>
-                                <strong class="property-price text-primary mb-3 d-block text-success">{{ App\Helpers\FormatHelpers::to_real($house['value']) }}</strong>
+                                <strong class="property-price text-primary mb-3 d-block text-success">{{ App\Helpers\FormatHelpers::replace(',00', '', App\Helpers\FormatHelpers::to_real($house['value'])) }}</strong>
                                 <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
                                     <li class="text-center">
                                         <span class="property-specs">Quartos</span>

@@ -292,4 +292,15 @@ class FormatHelpers
 
         return $remove;
     }
+
+    /**
+     * @param $search
+     * @param $replace
+     * @param $string
+     * @return string|string[]
+     */
+    static function replace($search, $replace ,$string)
+    {
+        return str_replace($search, $replace, $string);
+    }
 }

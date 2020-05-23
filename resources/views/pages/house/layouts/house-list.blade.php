@@ -27,7 +27,7 @@
                                     <span class="property-icon icon-room"></span>
                                     {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house['uf'] }}
                                 </span>
-                                <strong class="property-price text-primary mb-3 d-block text-success">{{ App\Helpers\FormatHelpers::to_real($house['value']) }}</strong>
+                                <strong class="property-price text-primary mb-3 d-block text-success">{{ App\Helpers\FormatHelpers::replace(',00', '', App\Helpers\FormatHelpers::to_real($house['value'])) }}</strong>
                                 <p class="fe-text-color fe-mobile-none">{{ \App\Helpers\FormatHelpers::replaceQuill(App\Helpers\FormatHelpers::limiter($house['description'], 175)) }}</p>
                                 <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
                                     <li class="text-center">
@@ -57,14 +57,8 @@
 </div>
 
 <!-- paginação -->
-<div class="bg-light pb-90">
+<div class="bg-light">
     <div class="col-md-12 text-center">
-        <div class="site-pagination">
-            <a href="javascript:void(0)" class="active">1</a>
-            <a href="javascript:void(0)">2</a>
-            <a href="javascript:void(0)">3</a>
-            <a href="javascript:void(0)">4</a>
-            <a href="javascript:void(0)">5</a>
-        </div>
+        @include('layouts.components.pagination', ['paginator' => $houses])
     </div>
 </div>

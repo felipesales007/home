@@ -10,7 +10,7 @@
 
 <div class="site-section">
     <div class="container">
-        <div class="row">
+        <div class="row mb--70">
             @foreach ($news as $new)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-5">
@@ -34,8 +34,6 @@
 </div>
 
 <!-- paginação -->
-<div class="pb-90 fe-pagination-blog">
-    <div class="col-md-12 text-center">
-        @include('layouts.components.pagination', ['paginator' => $news])
-    </div>
+<div class="col-md-12 text-center">
+    @include('layouts.components.pagination', ['paginator' => $news])
 </div>

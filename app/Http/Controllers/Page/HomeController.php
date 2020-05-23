@@ -26,8 +26,8 @@ class HomeController extends Controller
             ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
             ->join('states', 'states.id', '=', 'publication_houses.state_id')
             ->where('publication_houses.entity_id', config('app.id'))
-            ->limit(9)
-            ->get();
+            ->where('status', 1)
+            ->paginate(9);
 
         return view('index', compact('slides', 'houses', 'recents'));
     }

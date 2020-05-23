@@ -1,5 +1,5 @@
 @if ($paginator->lastPage() > 1)
-    <ul class="pagination fe-center-x">
+    <ul class="pagination fe-center-x pb-90">
         <!-- voltar -->
         <li class="page-item {{ $paginator->currentPage() == 1 ? 'disabled' : '' }}" title="voltar">
             @if ($paginator->currentPage() == 1)
