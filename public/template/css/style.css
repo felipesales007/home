@@ -1074,7 +1074,7 @@ a:hover {
     border: none;
 }
 
-.form-search .btn[type="submit"] {
+.form-search .btn {
     height: 47px;
     padding: 10px;
 }
