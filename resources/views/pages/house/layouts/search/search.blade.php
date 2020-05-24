@@ -21,13 +21,13 @@
                         @if (request()->segment(count(request()->segments())) == 'home')
                             <!-- oferta -->
                             <div class="col-md-2 mb-4 mb-lg-0">
-                                <label for="types-offer">Tipo de oferta</label>
+                                <label for="type-offer">Tipo de oferta</label>
                                 <div class="select-wrap">
                                     {{ Form::select(
                                         "name",
                                         App\Models\Publication\House\Offer::getOffersOptions(),
-                                        old("types_offer"),
-                                        ["id" => "types-offer", "name" => "types_offer", "class" => "form-control d-block", "placeholder" => "Selecione"]
+                                        old("type_offer", $offer),
+                                        ["id" => "type-offer", "name" => "type_offer", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                     )}}
                                 </div>
                             </div>
@@ -35,13 +35,13 @@
 
                         <!-- imóvel -->
                         <div class="mb-4 mb-lg-0 {{ request()->segment(count(request()->segments())) == 'home' ? 'col-md-2' : 'col-md-3' }}">
-                            <label for="types-house">Tipo de imóvel</label>
+                            <label for="type-house">Tipo de imóvel</label>
                             <div class="select-wrap">
                                 {{ Form::select(
                                     "name",
                                     App\Models\Publication\House\TypeHouse::getTypesHousesOptions(),
-                                    old("types_house"),
-                                    ["id" => "types-house", "name" => "types_house", "class" => "form-control d-block", "placeholder" => "Selecione"]
+                                    old("type_house", $type_house),
+                                    ["id" => "type-house", "name" => "type_house", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                 )}}
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                 {{ Form::select(
                                     "name",
                                     App\Models\Publication\House\House::getHousesCitiesOptions(),
-                                    old("select_city"),
+                                    old("select_city", $city),
                                     ["id" => "select-city", "name" => "select_city", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                 )}}
                             </div>
@@ -66,7 +66,7 @@
                                 {{ Form::select(
                                     "name",
                                     App\Models\Publication\House\House::getHousesNeighborhoodsOptions(),
-                                    old("select_neighborhood"),
+                                    old("select_neighborhood", $neighborhood),
                                     ["id" => "select-neighborhood", "name" => "select_neighborhood", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                 )}}
                             </div>
