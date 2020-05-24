@@ -45,12 +45,12 @@ class Contact extends Notification
         $mailMessage->greeting('Olá,');
         $mailMessage->line('Sou <b>' . $this->message->name . '</b> e venho através deste contato informar a mensagem abaixo:');
 
+        $mailMessage->line($this->message->message . '<br><br>');
+
         if ($this->message->house) {
             $mailMessage->line('<b>Imóvel: </b>' . $this->message->house);
             $mailMessage->line('<b>Link: </b><a href="' . $this->message->link . '">' . $this->message->link . '</a><br><br>');
         }
-
-        $mailMessage->line($this->message->message . '<br><br>');
 
         if ($this->message->phone) {
             $mailMessage->line('<b>Telefone: </b>' . $this->message->phone);

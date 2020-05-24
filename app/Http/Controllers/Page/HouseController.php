@@ -6,6 +6,8 @@ use App\Helpers\NotifyHelpers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Models\About\Information\Description;
+use App\Models\Publication\House\House;
+use App\Models\Publication\House\Item;
 use App\Notifications\Contact;
 use Exception;
 use Illuminate\Contracts\View\Factory;
@@ -72,7 +74,20 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        return view('pages.house.detail');
+        $house = House::select('publication_houses.*', 'uf', 'publication_houses_types_houses.name as type',
+            'publication_houses_realtors.contact', 'publication_houses_realtors.whatsapp')
+            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
+            ->join('publication_houses_types_houses', 'publication_houses_types_houses.id', '=', 'publication_houses.type_house_id')
+            ->join('publication_houses_realtors', 'publication_houses_realtors.id', '=', 'publication_houses.realtor_id')
+            ->join('states', 'states.id', '=', 'publication_houses.state_id')
+            ->where('publication_houses.entity_id', config('app.id'))
+            ->find($request['id']);
+
+        $items = Item::getItems($house->id ?? null);
+
+        $this->permissionHasPage($house);
+
+        return view('pages.house.detail', compact('house', 'items'));
     }
 
     /**
