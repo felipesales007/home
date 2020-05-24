@@ -7,7 +7,7 @@
     @include('pages.home.layouts.presentation')
 
     <!-- buscar -->
-    @include('pages.house.layouts.search.search')
+    @include('pages.house.layouts.search')
 
     <!-- casas -->
     @include('pages.house.layouts.house-module')
