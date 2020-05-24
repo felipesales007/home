@@ -111,9 +111,9 @@
                             <div class="col-12">
                                 <h2 class="h4 text-black mb-3">Galeria</h2>
                             </div>
-                            <!-- imagens -->
                             @foreach($items as $item)
                                 @if($item['image'])
+                                    <!-- imagens -->
                                     <div class="col-sm-6 col-md-4 col-lg-3">
                                         <a href="{{ config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/items/' . $item['image'] }}" class="image-popup gal-item">
                                             <img src="{{ config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/items/' . $item['image'] }}" class="img-fluid img-fluid-gallery" alt="">
@@ -122,9 +122,9 @@
                                 @endif
                             @endforeach
 
-                            <!-- vídeos -->
                             @foreach($items as $item)
                                 @if($item['youtube'])
+                                    <!-- vídeos -->
                                     <iframe src="https://www.youtube.com/embed/{{ substr($item['youtube'], strrpos($item['youtube'], '=') + 1) }}" class="mt-3 fe-radius" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="100%" height="250px"></iframe>
                                 @endif
                             @endforeach

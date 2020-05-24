@@ -14,7 +14,7 @@
         </div>
 
         <!-- seleção -->
-        <form method="get" action="{{ route('home.page') }}">
+        <form method="get" action="{{ route(request()->route()->getName()) }}">
             <div class="row">
                 <div class="form-search form-search-top col-md-12">
                     <div class="row align-items-end">

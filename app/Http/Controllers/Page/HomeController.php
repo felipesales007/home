@@ -57,6 +57,6 @@ class HomeController extends Controller
             })
             ->paginate(9);
 
-        return view('index', compact('slides', 'houses', 'recents', 'offer', 'type_house', 'city', 'neighborhood', 'order'));
+        return view('index', compact('slides', 'recents', 'houses', 'offer', 'type_house', 'city', 'neighborhood', 'order'));
     }
 }

@@ -31,37 +31,67 @@ class HouseController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param Request $request
      * @return Factory|RedirectResponse|View
      */
-    public function release()
+    public function release(Request $request)
     {
         $this->permissionBlock();
 
-        return view('pages.house.page');
+        $background   = House::getRandomImage(2);
+        $type_house   = $request['type_house'];
+        $city         = $request['select_city'];
+        $neighborhood = $request['select_neighborhood'];
+        $order        = $request['order'];
+        $orderBy      = explode('-', $order);
+
+        $houses = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, 2);
+
+        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order'));
     }
 
     /**
      * Display the specified resource.
      *
+     * @param Request $request
      * @return Factory|RedirectResponse|View
      */
-    public function used()
+    public function used(Request $request)
     {
         $this->permissionBlock();
 
-        return view('pages.house.page');
+        $background   = House::getRandomImage(3);
+        $type_house   = $request['type_house'];
+        $city         = $request['select_city'];
+        $neighborhood = $request['select_neighborhood'];
+        $order        = $request['order'];
+        $orderBy      = explode('-', $order);
+
+        $houses = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, 3);
+
+        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order'));
     }
 
     /**
      * Display the specified resource.
      *
+     * @param Request $request
      * @return Factory|RedirectResponse|View
      */
-    public function rental()
+    public function rental(Request $request)
     {
         $this->permissionBlock();
 
-        return view('pages.house.page');
+        $background   = House::getRandomImage(1);
+        $type_house   = $request['type_house'];
+        $city         = $request['select_city'];
+        $neighborhood = $request['select_neighborhood'];
+        $order        = $request['order'];
+        $orderBy      = explode('-', $order);
+
+        $houses = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, 1);
+
+        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order'));
     }
 
     /**

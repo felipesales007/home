@@ -62,4 +62,49 @@ class House extends Model
 
         return '/images/default/default-image.png';
     }
+
+    static function getRandomImage($offer_id)
+    {
+        $house = House::where('entity_id', config('app.id'))
+            ->where('status', 1)
+            ->where('offer_id', $offer_id)
+            ->whereNotNull('image')
+            ->get()
+            ->pluck('image');
+
+        $count = $house;
+
+        if ($count->count()) {
+            return config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/houses/' . $house->random(1)[0];
+        }
+
+        return url('images/default/others/house.png');
+    }
+
+    static function getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer_id)
+    {
+        return House::select('publication_houses.*', 'publication_houses_offers.name as offer', 'uf')
+            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
+            ->join('publication_houses_types_houses', 'publication_houses_types_houses.id', '=', 'publication_houses.type_house_id')
+            ->join('states', 'states.id', '=', 'publication_houses.state_id')
+            ->where('publication_houses.entity_id', config('app.id'))
+            ->where('status', 1)
+            ->where('offer_id', $offer_id)
+            ->when($type_house, function ($query) use ($type_house) {
+                $query->where('publication_houses.type_house_id', $type_house);
+            })
+            ->when($city, function ($query) use ($city) {
+                $query->where('publication_houses.city', $city);
+            })
+            ->when($neighborhood, function ($query) use ($neighborhood) {
+                $query->where('publication_houses.neighborhood', $neighborhood);
+            })
+            ->when($order, function ($query) use ($orderBy) {
+                $query->orderBy($orderBy[0], $orderBy[1]);
+            })
+            ->when(!$order, function ($query) {
+                $query->orderBy('created_at', 'desc');
+            })
+            ->paginate(9);
+    }
 }
