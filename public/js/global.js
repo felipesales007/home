@@ -184,25 +184,6 @@ if (sessionStorage.getItem('houses.card') === '1') {
     $('#card-house-list').addClass('d-none');
 }
 
-// house filter listing event
-$('#card-a-z').on('click', function () {
-    $(this).addClass('active');
-    $('#card-z-a').removeClass('active');
-    $('#card-recent').removeClass('active');
-});
-
-$('#card-z-a').on('click', function () {
-    $(this).addClass('active');
-    $('#card-a-z').removeClass('active');
-    $('#card-recent').removeClass('active');
-});
-
-$('#card-recent').on('click', function () {
-    $(this).addClass('active');
-    $('#card-a-z').removeClass('active');
-    $('#card-z-a').removeClass('active');
-});
-
 // JQuery Mask masks for the system
 $(function () {
     // mask for phone and cellphone
@@ -252,6 +233,11 @@ $(function () {
 });
 
 // pagination house focus
-if (location.href.indexOf('?page=') >= 0) {
+if (location.href.indexOf('?') >= 0) {
     document.getElementById('filter-houses').scrollIntoView();
 }
+
+// select change
+$('#order').change(function() {
+    $('#btn-search').click();
+});

@@ -62,6 +62,6 @@
 <!-- paginação -->
 <div class="bg-light">
     <div class="col-md-12 text-center">
-        @include('layouts.components.pagination', ['paginator' => $houses])
+        @include('layouts.components.pagination', ['paginator' => $houses->appends(Illuminate\Support\Facades\Request::except('page'))])
     </div>
 </div>

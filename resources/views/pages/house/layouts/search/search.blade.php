@@ -14,7 +14,7 @@
         </div>
 
         <!-- seleção -->
-        <form>
+        <form method="get" action="{{ route('home.page') }}">
             <div class="row">
                 <div class="form-search form-search-top col-md-12">
                     <div class="row align-items-end">
@@ -74,7 +74,7 @@
 
                         <!-- botão -->
                         <div class="col-md-2 mt-4">
-                            <a type="submit" id="btn-search" class="btn btn-success text-white btn-block">Buscar</a>
+                            <button id="btn-search" class="btn btn-success text-white btn-block">Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -96,18 +96,14 @@
 
                         <!-- ordem -->
                         <div class="ml-auto d-flex align-items-center">
-                            <div class="filter-search">
-                                <a href="javascript:void(0)" id="card-a-z" class="px-3 border-right active">A-Z</a>
-                                <a href="javascript:void(0)" id="card-z-a" class="px-3 border-right">Z-A</a>
-                                <a href="javascript:void(0)" id="card-recent" class="px-3 border-right">Recentes</a>
-                            </div>
-
                             <div class="select-wrap ml-3 mt-2">
                                 <label>
-                                    <select class="form-control form-control-sm d-block pr-5">
-                                        <option value="">Sem ordem</option>
-                                        <option value="asc">Menor preço</option>
-                                        <option value="desc">Maior preço</option>
+                                    <select id="order" name="order" class="form-control form-control-sm d-block pr-5">
+                                        <option value="created_at-desc" @if($order == 'created_at-desc') selected @endif>Recentes</option>
+                                        <option value="name-asc" @if($order == 'name-asc') selected @endif>A-Z</option>
+                                        <option value="name-desc" @if($order == 'name-desc') selected @endif>Z-A</option>
+                                        <option value="value-asc" @if($order == 'value-asc') selected @endif>Menor preço</option>
+                                        <option value="value-desc" @if($order == 'value-desc') selected @endif>Maior preço</option>
                                     </select>
                                 </label>
                             </div>
