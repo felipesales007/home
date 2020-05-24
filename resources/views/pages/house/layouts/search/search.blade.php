@@ -86,10 +86,10 @@
                     <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
                         <!-- modo de visualização -->
                         <div class="ml-3 ml-md-2 fe-mobile-none">
-                            <a href="javascript:void(0)" id="card-module" class="icon-view view-module active">
+                            <a href="javascript:void(0)" id="card-module" class="icon-view active">
                                 <span class="icon-view_module"></span>
                             </a>
-                            <a href="javascript:void(0)" id="card-list" class="icon-view view-list">
+                            <a href="javascript:void(0)" id="card-list" class="icon-view">
                                 <span class="icon-view_list"></span>
                             </a>
                         </div>
@@ -97,8 +97,9 @@
                         <!-- ordem -->
                         <div class="ml-auto d-flex align-items-center">
                             <div class="filter-search">
-                                <a href="javascript:void(0)" id="card-all" class="view-list px-3 border-right active">Todos</a>
-                                <a href="javascript:void(0)" id="card-recent" class="view-list px-3 border-right">Recentes</a>
+                                <a href="javascript:void(0)" id="card-a-z" class="px-3 border-right active">A-Z</a>
+                                <a href="javascript:void(0)" id="card-z-a" class="px-3 border-right">Z-A</a>
+                                <a href="javascript:void(0)" id="card-recent" class="px-3 border-right">Recentes</a>
                             </div>
 
                             <div class="select-wrap ml-3 mt-2">
