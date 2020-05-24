@@ -31,23 +31,23 @@
                                     {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house['uf'] }}
                                 </span>
                                 <strong class="property-price text-primary mb-3 d-block text-success">{{ App\Helpers\FormatHelpers::replace(',00', '', App\Helpers\FormatHelpers::to_real($house['value'])) }}</strong>
-                                <p class="fe-text-color fe-mobile-none">{{ \App\Helpers\FormatHelpers::replaceQuill(App\Helpers\FormatHelpers::limiter($house['description'], 175)) }}</p>
+                                <p class="fe-text-color fe-mobile-none">{{ App\Helpers\FormatHelpers::replaceQuill(App\Helpers\FormatHelpers::limiter($house['description'], 175)) }}</p>
                                 <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">
                                     <li class="text-center">
                                         <span class="property-specs">Quartos</span>
-                                        <span class="property-specs-number">{{ $house['bedroom'] }}</span>
+                                        <span class="property-specs-number">{{ $house['bedroom'] ?? '-' }}</span>
                                     </li>
                                     <li class="text-center">
                                         <span class="property-specs">Banheiros</span>
-                                        <span class="property-specs-number">{{ $house['bathroom'] }}</span>
+                                        <span class="property-specs-number">{{ $house['bathroom'] ?? '-' }}</span>
                                     </li>
                                     <li class="text-center">
                                         <span class="property-specs">Garagem</span>
-                                        <span class="property-specs-number">{{ $house['garage'] }}</span>
+                                        <span class="property-specs-number">{{ $house['garage'] ?? '-' }}</span>
                                     </li>
                                     <li class="text-center">
                                         <span class="property-specs">Área</span>
-                                        <span class="property-specs-number">{{ $house['area'] }}m²</span>
+                                        <span class="property-specs-number">{{ $house['area'] ?? '-' }}m²</span>
                                     </li>
                                 </ul>
                             </div>
