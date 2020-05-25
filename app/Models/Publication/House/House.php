@@ -2,6 +2,7 @@
 
 namespace App\Models\Publication\House;
 
+use App\Models\Other\State;
 use Illuminate\Database\Eloquent\Model;
 
 class House extends Model
@@ -10,15 +11,7 @@ class House extends Model
 
     static function getHouse($id)
     {
-        return House::select('publication_houses.*', 'uf', 'publication_houses_types_houses.name as type',
-            'publication_houses_realtors.contact', 'publication_houses_realtors.whatsapp')
-            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
-            ->join('publication_houses_types_houses', 'publication_houses_types_houses.id', '=', 'publication_houses.type_house_id')
-            ->join('publication_houses_realtors', 'publication_houses_realtors.id', '=', 'publication_houses.realtor_id')
-            ->join('states', 'states.id', '=', 'publication_houses.state_id')
-            ->where('publication_houses.entity_id', config('app.id'))
-            ->where('status', 1)
-            ->find($id);
+        return House::where('entity_id', config('app.id'))->where('status', 1)->find($id);
     }
 
     static function getHousesCitiesOptions()
@@ -74,11 +67,7 @@ class House extends Model
 
     static function getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer)
     {
-        return House::select('publication_houses.*', 'publication_houses_offers.name as offer', 'uf')
-            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
-            ->join('publication_houses_types_houses', 'publication_houses_types_houses.id', '=', 'publication_houses.type_house_id')
-            ->join('states', 'states.id', '=', 'publication_houses.state_id')
-            ->where('publication_houses.entity_id', config('app.id'))
+        return House::where('entity_id', config('app.id'))
             ->where('status', 1)
             ->when($offer, function ($query) use ($offer) {
                 $query->where('offer_id', $offer);
@@ -103,14 +92,31 @@ class House extends Model
 
     static function getHousesRecents($offer)
     {
-        return House::select('publication_houses.*', 'publication_houses_offers.name as offer', 'uf')
-            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
-            ->join('states', 'states.id', '=', 'publication_houses.state_id')
-            ->where('publication_houses.entity_id', config('app.id'))
+        return House::where('entity_id', config('app.id'))
             ->where('status', 1)
             ->where('offer_id', $offer)
             ->orderBy('created_at', 'desc')
             ->limit(3)
             ->get();
+    }
+
+    public function getRealtor()
+    {
+        return $this->belongsTo(Realtor::class, 'realtor_id');
+    }
+
+    public function getOffer()
+    {
+        return $this->belongsTo(Offer::class, 'offer_id');
+    }
+
+    public function getTypeHouse()
+    {
+        return $this->belongsTo(TypeHouse::class, 'type_house_id');
+    }
+
+    public function getState()
+    {
+        return $this->belongsTo(State::class, 'state_id');
     }
 }

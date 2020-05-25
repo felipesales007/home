@@ -13,7 +13,8 @@ class Entity extends Model
 
     static function getEntity()
     {
-        return Entity::where('blocked', null)->where(function ($query) {
+        return Entity::where('blocked', null)
+            ->where(function ($query) {
                 $query->orWhere('blocked_at', '=', null)->orWhere('blocked_at', '<', now()->addDays(-1));
             })->find(config('app.id'));
     }

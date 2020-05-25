@@ -20,7 +20,7 @@
                             <div class="property-thumbnail property-thumbnail-module">
                                 <!-- tag -->
                                 <div class="offer-type-wrap">
-                                    <span class="offer-type bg-success">{{ $recent['offer'] }}</span>
+                                    <span class="offer-type bg-success">{{ $recent->getOffer->name }}</span>
                                     @if(now()->diffInDays($recent['created_at']) < 30)
                                         <span class="offer-type bg-danger">Recente</span>
                                     @endif
@@ -35,7 +35,7 @@
                                 <h2 class="property-title">{{ $recent['name'] }}</h2>
                                 <span class="property-location fe-text-color d-block mb-3">
                                     <span class="property-icon icon-room"></span>
-                                    {{ $recent['address'] }}, {{ $recent['neighborhood'] }}, {{ $recent['city'] }} - {{ $recent['uf'] }}
+                                    {{ $recent['address'] }}, {{ $recent['neighborhood'] }}, {{ $recent['city'] }} - {{ $recent->getState->uf }}
                                 </span>
                                 <strong class="property-price text-primary mb-3 d-block text-success">R$ {{ App\Helpers\FormatHelpers::replace(',00', '', App\Helpers\FormatHelpers::to_real($recent['value'])) }}</strong>
                                 <ul class="property-specs-wrap fe-text-color mb-3 mb-lg-0">

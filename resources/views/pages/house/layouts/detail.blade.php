@@ -53,7 +53,7 @@
                         <div class="col-md-12">
                             <span class="property-location fe-text-color d-block mb-3">
                                 <span class="property-icon icon-room"></span>
-                                {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house['uf'] }}
+                                {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house->getState->uf }}
                             </span>
                         </div>
                         <div class="col-md-6">
@@ -85,7 +85,7 @@
                     <div class="row mb-5">
                         <div class="text-center border-bottom border-top py-3 {{ $house['iptu'] > 0 ? 'col-md-4 col-lg-4' : 'col-md-6 col-lg-6' }}">
                             <span class="d-inline-block text-black mb-0 caption-text">Tipo de imóvel</span>
-                            <strong class="d-block">{{ $house['type'] }}</strong>
+                            <strong class="d-block">{{ $house->getTypeHouse->name }}</strong>
                         </div>
                         @if($house['iptu'] > 0)
                             <div class="col-md-4 col-lg-4 text-center border-bottom border-top py-3">
@@ -135,20 +135,20 @@
 
             <!-- card contato -->
             <div class="col-lg-4">
-                @if($house['contact'])
+                @if($house->getRealtor->contact)
                     <!-- telefone -->
                     <div class="bg-white widget border rounded">
                         <h3 class="h4 text-black widget-title mb-3">Contato</h3>
                         <i class="fas fa-phone mr-1"></i>
-                        {{ $house['contact'] }}
+                        {{ $house->getRealtor->contact }}
                     </div>
                 @endif
 
-                @if($house['whatsapp'])
+                @if($house->getRealtor->whatsapp)
                     <!-- whatsapp -->
                     <div class="bg-white widget border rounded mt-4">
                         <h3 class="h4 text-black widget-title mb-3">Contato por whatsapp</h3>
-                        <a href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/[^0-9]/', '', $house['whatsapp']) }}&text=Gostaria de saber mais sobre o imóvel {{ $house['name'] }} {{ url()->full() }}" target="_blank" class="btn btn-success text-white">
+                        <a href="https://api.whatsapp.com/send?phone=55{{ preg_replace('/[^0-9]/', '', $house->getRealtor->whatsapp) }}&text=Gostaria de saber mais sobre o imóvel {{ $house['name'] }} {{ url()->full() }}" target="_blank" class="btn btn-success text-white">
                             <i class="fab fa-whatsapp mr-1"></i>
                             Conversar
                         </a>

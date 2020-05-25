@@ -13,7 +13,7 @@
                             <div class="property-thumbnail property-thumbnail-list">
                                 <!-- tag -->
                                 <div class="offer-type-wrap">
-                                    <span class="offer-type bg-success">{{ $house['offer'] }}</span>
+                                    <span class="offer-type bg-success">{{ $house->getOffer->name }}</span>
                                     @if(now()->diffInDays($house['created_at']) < 30)
                                         <span class="offer-type bg-danger">Recente</span>
                                     @endif
@@ -28,7 +28,7 @@
                                 <h2 class="property-title">{{ $house['name'] }}</h2>
                                 <span class="property-location fe-text-color d-block mb-3">
                                     <span class="property-icon icon-room"></span>
-                                    {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house['uf'] }}
+                                    {{ $house['address'] }}, {{ $house['neighborhood'] }}, {{ $house['city'] }} - {{ $house->getState->uf }}
                                 </span>
                                 <strong class="property-price text-primary mb-3 d-block text-success">R$ {{ App\Helpers\FormatHelpers::replace(',00', '', App\Helpers\FormatHelpers::to_real($house['value'])) }}</strong>
                                 <p class="fe-text-color fe-mobile-none">{{ App\Helpers\FormatHelpers::replaceQuill(App\Helpers\FormatHelpers::limiter($house['description'], 175)) }}</p>
