@@ -11,7 +11,7 @@
 <div class="site-section">
     <div class="container">
         <div class="row mb--70">
-            @foreach ($news as $new)
+            @foreach($news as $new)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card-content-blog">

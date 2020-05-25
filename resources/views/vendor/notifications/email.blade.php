@@ -1,9 +1,9 @@
 @component('mail::message')
 {{-- Greeting --}}
-@if (! empty($greeting))
+@if(!empty($greeting))
 # {{ $greeting }}
 @else
-@if ($level === 'error')
+@if($level === 'error')
 # @lang('Ops!')
 @else
 # @lang('Hello!')
@@ -11,7 +11,7 @@
 @endif
 
 {{-- Intro Lines --}}
-@foreach ($introLines as $line)
+@foreach($introLines as $line)
 {!! $line !!}
 
 @endforeach
@@ -35,13 +35,13 @@
 @endisset
 
 {{-- Outro Lines --}}
-@foreach ($outroLines as $line)
+@foreach($outroLines as $line)
 {!! $line !!}
 
 @endforeach
 
 {{-- Salutation --}}
-@if (! empty($salutation))
+@if(!empty($salutation))
 {{ $salutation }}
 @else
 @lang('Atenciosamente'),

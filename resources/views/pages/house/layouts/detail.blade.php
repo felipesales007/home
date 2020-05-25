@@ -165,9 +165,9 @@
                             <label class="form-control-label font-weight-bold" for="house">Imóvel</label>
                             <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-house">
-                                <input readonly type="text" id="house" name="house" class="form-control {{ $errors->has('house') ? 'is-invalid' : '' }}" value="{{ old('house', $house['name']) }}" minlength="3" maxlength="191" @if ($errors->has('house')) autofocus @endif>
+                                <input readonly type="text" id="house" name="house" class="form-control {{ $errors->has('house') ? 'is-invalid' : '' }}" value="{{ old('house', $house['name']) }}" minlength="3" maxlength="191" @if($errors->has('house')) autofocus @endif>
                             </div>
-                            @if ($errors->has('house'))
+                            @if($errors->has('house'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('house') }}</div>
                             @endif
@@ -178,9 +178,9 @@
                             <label class="form-control-label font-weight-bold" for="link">Link</label>
                             <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-link">
-                                <input readonly type="url" id="link" name="link" class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" value="{{ old('link', url()->full()) }}" minlength="3" maxlength="191" @if ($errors->has('link')) autofocus @endif>
+                                <input readonly type="url" id="link" name="link" class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" value="{{ old('link', url()->full()) }}" minlength="3" maxlength="191" @if($errors->has('link')) autofocus @endif>
                             </div>
-                            @if ($errors->has('link'))
+                            @if($errors->has('link'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('link') }}</div>
                             @endif
@@ -191,9 +191,9 @@
                             <label class="form-control-label font-weight-bold" for="name">Nome</label>
                             <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-name">
-                                <input type="text" id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="ex.: Felipe Sales" value="{{ old('name') }}" minlength="3" maxlength="191" required onkeypress="return onlyLetters(event);" onkeyup="letterUppercase('name');" @if ($errors->has('name')) autofocus @endif>
+                                <input type="text" id="name" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="ex.: Felipe Sales" value="{{ old('name') }}" minlength="3" maxlength="191" required onkeypress="return onlyLetters(event);" onkeyup="letterUppercase('name');" @if($errors->has('name')) autofocus @endif>
                             </div>
-                            @if ($errors->has('name'))
+                            @if($errors->has('name'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('name') }}</div>
                             @endif
@@ -204,9 +204,9 @@
                             <label class="form-control-label font-weight-bold" for="email">E-mail</label>
                             <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group input-group-merge validate-email">
-                                <input type="email" id="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="ex.: exemplo@dominio.com" value="{{ old('email') }}" maxlength="191" required autocomplete="email" @if ($errors->has('email')) autofocus @endif>
+                                <input type="email" id="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="ex.: exemplo@dominio.com" value="{{ old('email') }}" maxlength="191" required autocomplete="email" @if($errors->has('email')) autofocus @endif>
                             </div>
-                            @if ($errors->has('email'))
+                            @if($errors->has('email'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('email') }}</div>
                             @endif
@@ -216,9 +216,9 @@
                         <div class="form-group">
                             <label class="form-control-label font-weight-bold" for="phone">Telefone</label>
                             <div class="input-group input-group-merge validate-phone">
-                                <input type="tel" id="phone" name="phone" class="form-control mask-phones {{ $errors->has('phone') ? 'is-invalid' : '' }}" placeholder="ex.: (71) 98888-8888" value="{{ old('phone') }}" minlength="14" maxlength="15" @if ($errors->has('phone')) autofocus @endif>
+                                <input type="tel" id="phone" name="phone" class="form-control mask-phones {{ $errors->has('phone') ? 'is-invalid' : '' }}" placeholder="ex.: (71) 98888-8888" value="{{ old('phone') }}" minlength="14" maxlength="15" @if($errors->has('phone')) autofocus @endif>
                             </div>
-                            @if ($errors->has('phone'))
+                            @if($errors->has('phone'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('phone') }}</div>
                             @endif
@@ -229,9 +229,9 @@
                             <label class="form-control-label font-weight-bold" for="message">Mensagem</label>
                             <span class="fe-star" title="obrigatório">*</span>
                             <div class="input-group validate-message">
-                                <textarea id="message" name="message" rows="4" resize="none" class="form-control form-control-textarea {{ $errors->has('message') ? 'is-invalid' : '' }}" placeholder="ex.: Olá tudo bem, gostaria de entrar em contato com você." minlength="10" maxlength="1500" required onkeyup="firstLetterUppercase(this);" @if ($errors->has('message')) autofocus @endif>{{ old('message') }}</textarea>
+                                <textarea id="message" name="message" rows="4" resize="none" class="form-control form-control-textarea {{ $errors->has('message') ? 'is-invalid' : '' }}" placeholder="ex.: Olá tudo bem, gostaria de entrar em contato com você." minlength="10" maxlength="1500" required onkeyup="firstLetterUppercase(this);" @if($errors->has('message')) autofocus @endif>{{ old('message') }}</textarea>
                             </div>
-                            @if ($errors->has('message'))
+                            @if($errors->has('message'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('message') }}</div>
                             @endif
@@ -244,7 +244,7 @@
                                 {!!  NoCaptcha::display() !!}
                             </div>
                             <div id="g-recaptcha-error"></div>
-                            @if ($errors->has('g-recaptcha-response'))
+                            @if($errors->has('g-recaptcha-response'))
                                 <!-- alerta de erro -->
                                 <div class="invalid-feedback" role="alert">{{ $errors->first('g-recaptcha-response') }}</div>
                             @endif

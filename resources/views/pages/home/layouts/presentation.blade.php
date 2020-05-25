@@ -6,8 +6,8 @@
                     <div class="col-md-10">
                         <h1 class="mb-2">{{ $slide['title'] }}</h1>
                         <p class="mb-5"><strong class="h2 text-success font-weight-bold">{{ $slide['description'] }}</strong></p>
-                        @if ($slide['link'])
-                            <p><a href="{{ $slide['link'] }}" @if ($slide['new_tab']) target="_blank" @endif class="btn btn-white btn-outline-white py-3 px-5 btn-2">{{ $slide['button'] ?? 'Mais detalhes' }}</a></p>
+                        @if($slide['link'])
+                            <p><a href="{{ $slide['link'] }}" @if($slide['new_tab']) target="_blank" @endif class="btn btn-white btn-outline-white py-3 px-5 btn-2">{{ $slide['button'] ?? 'Mais detalhes' }}</a></p>
                         @endif
                     </div>
                 </div>

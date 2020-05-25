@@ -11,7 +11,7 @@
 
         <!-- sugestões -->
         <div class="row mb-5">
-            @foreach ($recents as $recent)
+            @foreach($recents as $recent)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
@@ -21,7 +21,7 @@
                                 <!-- tag -->
                                 <div class="offer-type-wrap">
                                     <span class="offer-type bg-success">{{ $recent['offer'] }}</span>
-                                    @if (now()->diffInDays($recent['created_at']) < 30)
+                                    @if(now()->diffInDays($recent['created_at']) < 30)
                                         <span class="offer-type bg-danger">Recente</span>
                                     @endif
                                 </div>

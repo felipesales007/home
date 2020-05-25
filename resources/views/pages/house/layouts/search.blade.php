@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="pos-absolute right-0 mr-1 mr-sm-0 mr-md-0 mr-lg-0">
-                    @foreach (App\Models\About\Information\Social::getSocial() as $social)
+                    @foreach(App\Models\About\Information\Social::getSocial() as $social)
                         <a href="{{ $social['link'] }}" target="_blank" class="btn text-white fe-social-search">
                             <i class="{{ $social->getIcon->icon }}"></i>
                         </a>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="form-search form-search-top col-md-12">
                     <div class="row align-items-end">
-                        @if (request()->segment(count(request()->segments())) == 'home')
+                        @if(request()->segment(count(request()->segments())) == 'home')
                             <!-- oferta -->
                             <div class="col-md-2 mb-4 mb-lg-0">
                                 <label for="type-offer">Tipo de oferta</label>

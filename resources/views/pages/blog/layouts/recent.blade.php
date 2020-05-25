@@ -11,7 +11,7 @@
 
         <!-- três últimas -->
         <div class="row">
-            @foreach ($recents as $recent)
+            @foreach($recents as $recent)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="card-content-blog">

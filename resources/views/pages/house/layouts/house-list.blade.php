@@ -1,9 +1,9 @@
 <div id="card-house-list" class="site-section site-section-sm bg-light d-none">
     <div class="container">
-        @if (!$houses[0])
+        @if(!$houses[0])
             <div class="text-center">não há imóveis</div>
         @endif
-        @foreach ($houses as $house)
+        @foreach($houses as $house)
             <!-- card -->
             <div class="row mb-4">
                 <div class="col-md-12">
@@ -14,7 +14,7 @@
                                 <!-- tag -->
                                 <div class="offer-type-wrap">
                                     <span class="offer-type bg-success">{{ $house['offer'] }}</span>
-                                    @if (now()->diffInDays($house['created_at']) < 30)
+                                    @if(now()->diffInDays($house['created_at']) < 30)
                                         <span class="offer-type bg-danger">Recente</span>
                                     @endif
                                 </div>

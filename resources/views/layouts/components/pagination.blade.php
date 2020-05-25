@@ -1,8 +1,8 @@
-@if ($paginator->lastPage() > 1)
+@if($paginator->lastPage() > 1)
     <ul class="pagination fe-center-x pb-90">
         <!-- voltar -->
         <li class="page-item {{ $paginator->currentPage() == 1 ? 'disabled' : '' }}" title="voltar">
-            @if ($paginator->currentPage() == 1)
+            @if($paginator->currentPage() == 1)
                 <span class="page-link">
                     <i class="fas fa-angle-left"></i>
                 </span>
@@ -15,7 +15,7 @@
 
         <!-- primeira -->
         <li class="page-item {{ $paginator->currentPage() == 1 ? 'disabled' : '' }}" title="primeira">
-            @if ($paginator->currentPage() == 1)
+            @if($paginator->currentPage() == 1)
                 <span class="page-link">
                     <i class="fas fa-angle-double-left"></i>
                 </span>
@@ -42,9 +42,9 @@
                 }
             ?>
 
-            @if ($from < $i && $i < $to)
+            @if($from < $i && $i < $to)
                 <li class="page-item {{ $paginator->currentPage() == $i ? 'active' : '' }}">
-                    @if ($paginator->currentPage() == $i)
+                    @if($paginator->currentPage() == $i)
                         <span class="page-link">{{ $i }}</span>
                     @else
                         <a href="{{ $paginator->url($i) }}" class="page-link">{{ $i }}</a>
@@ -55,7 +55,7 @@
 
         <!-- última -->
         <li class="page-item {{ $paginator->currentPage() == $paginator->lastPage() ? 'disabled' : '' }}" title="última">
-            @if ($paginator->currentPage() == $paginator->lastPage())
+            @if($paginator->currentPage() == $paginator->lastPage())
                 <span class="page-link">
                     <i class="fas fa-angle-double-right"></i>
                 </span>
@@ -68,7 +68,7 @@
 
         <!-- próxima -->
         <li class="page-item {{ $paginator->currentPage() == $paginator->lastPage() ? 'disabled' : '' }}" title="próximo">
-            @if ($paginator->currentPage() == $paginator->lastPage())
+            @if($paginator->currentPage() == $paginator->lastPage())
                 <span class="page-link">
                     <i class="fas fa-angle-right"></i>
                 </span>

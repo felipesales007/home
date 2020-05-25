@@ -8,7 +8,7 @@
 
             <!-- social -->
             <div class="col-lg-6 text-right">
-                @foreach (App\Models\About\Information\Social::getSocial() as $social)
+                @foreach(App\Models\About\Information\Social::getSocial() as $social)
                     <a href="{{ $social['link'] }}" target="_blank" class="pl-0 pr-3">
                         <i class="{{ $social->getIcon->icon }}"></i>
                     </a>
