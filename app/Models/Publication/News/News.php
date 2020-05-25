@@ -26,7 +26,7 @@ class News extends Model
             return config('app.storage') . '/images/entities/' . config('app.id') . '/publication/news/' . $news->random(1)[0];
         }
 
-        return url('images/default/others/house.png');
+        return url('images/default/others/background.png');
     }
 
     static function storageFile($storage)

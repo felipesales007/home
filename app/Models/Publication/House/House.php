@@ -62,7 +62,7 @@ class House extends Model
             return config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/houses/' . $house->random(1)[0];
         }
 
-        return url('images/default/others/house.png');
+        return url('images/default/others/background.png');
     }
 
     static function getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer)

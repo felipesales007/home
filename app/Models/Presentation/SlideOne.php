@@ -23,6 +23,6 @@ class SlideOne extends Model
             return config('app.storage') . '/images/entities/' . config('app.id') . '/presentation/slide-one/' . $storage;
         }
 
-        return url('/images/default/others/house.png');
+        return url('/images/default/others/background.png');
     }
 }
