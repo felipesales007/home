@@ -25,8 +25,8 @@
                                 <div class="select-wrap">
                                     {{ Form::select(
                                         "name",
-                                        App\Models\Publication\House\Offer::getOffersOptions(),
-                                        old("type_offer", $offer),
+                                        App\Models\Other\Type\TypeOffer::getTypesOffersOptions(),
+                                        old("type_offer", $type_offer),
                                         ["id" => "type-offer", "name" => "type_offer", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                     )}}
                                 </div>

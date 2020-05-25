@@ -3,6 +3,7 @@
 namespace App\Models\Publication\House;
 
 use App\Models\Other\State;
+use App\Models\Other\Type\TypeOffer;
 use Illuminate\Database\Eloquent\Model;
 
 class House extends Model
@@ -47,11 +48,11 @@ class House extends Model
         return url('/images/default/others/image.png');
     }
 
-    static function getRandomImage($offer)
+    static function getRandomImage($type_offer)
     {
         $house = House::where('entity_id', config('app.id'))
             ->where('status', 1)
-            ->where('offer_id', $offer)
+            ->where('type_offer_id', $type_offer)
             ->whereNotNull('image')
             ->get()
             ->pluck('image');
@@ -65,12 +66,12 @@ class House extends Model
         return url('images/default/others/background.png');
     }
 
-    static function getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer)
+    static function getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $type_offer)
     {
         return House::where('entity_id', config('app.id'))
             ->where('status', 1)
-            ->when($offer, function ($query) use ($offer) {
-                $query->where('offer_id', $offer);
+            ->when($type_offer, function ($query) use ($type_offer) {
+                $query->where('type_offer_id', $type_offer);
             })
             ->when($type_house, function ($query) use ($type_house) {
                 $query->where('type_house_id', $type_house);
@@ -90,11 +91,11 @@ class House extends Model
             ->paginate(9);
     }
 
-    static function getHousesRecents($offer)
+    static function getHousesRecents($type_offer)
     {
         return House::where('entity_id', config('app.id'))
             ->where('status', 1)
-            ->where('offer_id', $offer)
+            ->where('type_offer_id', $type_offer)
             ->orderBy('created_at', 'desc')
             ->limit(3)
             ->get();
@@ -105,9 +106,9 @@ class House extends Model
         return $this->belongsTo(Realtor::class, 'realtor_id');
     }
 
-    public function getOffer()
+    public function getTypeOffer()
     {
-        return $this->belongsTo(Offer::class, 'offer_id');
+        return $this->belongsTo(TypeOffer::class, 'type_offer_id');
     }
 
     public function getTypeHouse()

@@ -11,6 +11,9 @@
 
         <!-- sugestões -->
         <div class="row mb-5">
+            @if(!isset($recents[0]))
+                <div class="fe-center-x">não há imóveis</div>
+            @endif
             @foreach($recents as $recent)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-4">
@@ -20,7 +23,7 @@
                             <div class="property-thumbnail property-thumbnail-module">
                                 <!-- tag -->
                                 <div class="offer-type-wrap">
-                                    <span class="offer-type bg-success">{{ rtrim($recent->getOffer->name, 's') }}</span>
+                                    <span class="offer-type bg-success">{{ rtrim($recent->getTypeOffer->name, 's') }}</span>
                                     @if(now()->diffInDays($recent['created_at']) < 30)
                                         <span class="offer-type bg-danger">Recente</span>
                                     @endif

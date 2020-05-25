@@ -24,19 +24,18 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $offer = 2;
-
+        $type_offer   = 2;
         $site         = Description::getDescription();
         $socials      = Social::getSocial();
-        $background   = House::getRandomImage($offer);
+        $background   = House::getRandomImage($type_offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
         $neighborhood = $request['select_neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
-        $recents = House::getHousesRecents($offer);
+        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $type_offer);
+        $recents = House::getHousesRecents($type_offer);
 
         return view('pages.house.page', compact('site','socials', 'background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
@@ -51,19 +50,18 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $offer = 3;
-
+        $type_offer   = 3;
         $site         = Description::getDescription();
         $socials      = Social::getSocial();
-        $background   = House::getRandomImage($offer);
+        $background   = House::getRandomImage($type_offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
         $neighborhood = $request['select_neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
-        $recents = House::getHousesRecents($offer);
+        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $type_offer);
+        $recents = House::getHousesRecents($type_offer);
 
         return view('pages.house.page', compact('site','socials', 'background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
@@ -78,19 +76,18 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $offer = 1;
-
+        $type_offer   = 1;
         $site         = Description::getDescription();
         $socials      = Social::getSocial();
-        $background   = House::getRandomImage($offer);
+        $background   = House::getRandomImage($type_offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
         $neighborhood = $request['select_neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
-        $recents = House::getHousesRecents($offer);
+        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $type_offer);
+        $recents = House::getHousesRecents($type_offer);
 
         return view('pages.house.page', compact('site','socials', 'background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
@@ -109,7 +106,7 @@ class HouseController extends Controller
         $socials = Social::getSocial();
         $house   = House::getHouse($request['id']);
         $items   = Item::getItems($house['id'] ?? null);
-        $recents = House::getHousesRecents($house['offer_id']);
+        $recents = House::getHousesRecents($house['type_offer_id']);
 
         $this->permissionHasPage($house);
 

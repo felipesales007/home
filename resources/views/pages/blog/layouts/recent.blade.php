@@ -11,6 +11,9 @@
 
         <!-- três últimas -->
         <div class="row">
+            @if(!isset($recents[0]))
+                <div class="fe-center-x pb-50">não há notícias</div>
+            @endif
             @foreach($recents as $recent)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-5">

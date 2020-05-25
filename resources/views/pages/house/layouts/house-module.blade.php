@@ -13,7 +13,7 @@
                             <div class="property-thumbnail property-thumbnail-module">
                                 <!-- tag -->
                                 <div class="offer-type-wrap">
-                                    <span class="offer-type bg-success">{{ rtrim($house->getOffer->name, 's') }}</span>
+                                    <span class="offer-type bg-success">{{ rtrim($house->getTypeOffer->name, 's') }}</span>
                                     @if(now()->diffInDays($house['created_at']) < 30)
                                         <span class="offer-type bg-danger">Recente</span>
                                     @endif

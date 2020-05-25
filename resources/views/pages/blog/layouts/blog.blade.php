@@ -11,6 +11,9 @@
 <div class="site-section">
     <div class="container">
         <div class="row mb--70">
+            @if(!isset($news[0]))
+                <div class="fe-center-x">não há notícias</div>
+            @endif
             @foreach($news as $new)
                 <!-- card -->
                 <div class="col-md-6 col-lg-4 mb-5">
