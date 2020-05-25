@@ -86,7 +86,7 @@
 
             <!-- imagem -->
             <div class="col-lg-6">
-                <img src="{{ url('images/default/others/form.png') }}" class="img-fluid fe-center-y op-0-9" alt="">
+                <img src="{{ url('images/default/others/contact.png') }}" class="img-fluid fe-center-y op-0-9" alt="">
             </div>
         </div>
     </div>
