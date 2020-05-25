@@ -2,32 +2,16 @@
 
 namespace App\Http\Controllers\Page;
 
-use App\Helpers\NotifyHelpers;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ContactRequest;
-use App\Models\About\Information\Description;
 use App\Models\Publication\House\House;
 use App\Models\Publication\House\Item;
-use App\Notifications\Contact;
-use Exception;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\View\View;
 
 class HouseController extends Controller
 {
-    use Notifiable;
-
-    /**
-     * E-mail para notificar.
-     *
-     * @var string
-     */
-    private $email;
-
     /**
      * Display the specified resource.
      *
@@ -38,16 +22,19 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $background   = House::getRandomImage(2);
+        $offer = 2;
+
+        $background   = House::getRandomImage($offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
         $neighborhood = $request['select_neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, 2);
+        $houses  = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
+        $recents = House::getHouseRecents($offer);
 
-        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order'));
+        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
 
     /**
@@ -60,16 +47,19 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $background   = House::getRandomImage(3);
+        $offer = 3;
+
+        $background   = House::getRandomImage($offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
         $neighborhood = $request['select_neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, 3);
+        $houses  = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
+        $recents = House::getHouseRecents($offer);
 
-        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order'));
+        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
 
     /**
@@ -82,16 +72,19 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $background   = House::getRandomImage(1);
+        $offer = 1;
+
+        $background   = House::getRandomImage($offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
         $neighborhood = $request['select_neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, 1);
+        $houses  = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
+        $recents = House::getHouseRecents($offer);
 
-        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order'));
+        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
 
     /**
@@ -113,31 +106,11 @@ class HouseController extends Controller
             ->where('publication_houses.entity_id', config('app.id'))
             ->find($request['id']);
 
-        $items = Item::getItems($house->id ?? null);
+        $items   = Item::getItems($house->id ?? null);
+        $recents = House::getHouseRecents($house['offer_id']);
 
         $this->permissionHasPage($house);
 
-        return view('pages.house.detail', compact('house', 'items'));
-    }
-
-    /**
-     * Enviar e-mail para o recurso especificado.
-     *
-     * @param ContactRequest $request
-     * @return JsonResponse
-     */
-    public function email(ContactRequest $request)
-    {
-        try {
-            // enviar notificação por e-mail
-            $this->email = Description::getDescription()['email'];
-            $this->notify(new Contact($request));
-
-            $data = NotifyHelpers::success_top_center('fas fa-envelope', 'Mensagem enviado com sucesso.');
-        } catch (Exception $e) {
-            $data = NotifyHelpers::warning_top_center('fas fa-exclamation-triangle', 'O envio da mensagem falhou.<br><br><small><b>erro: </b>' . $e->getMessage() . '</small>');
-        }
-
-        return response()->json($data);
+        return view('pages.house.detail', compact('house', 'items', 'recents'));
     }
 }

@@ -107,4 +107,17 @@ class House extends Model
             })
             ->paginate(9);
     }
+
+    static function getHouseRecents($offer_id)
+    {
+        return House::select('publication_houses.*', 'publication_houses_offers.name as offer', 'uf')
+            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
+            ->join('states', 'states.id', '=', 'publication_houses.state_id')
+            ->where('publication_houses.entity_id', config('app.id'))
+            ->where('status', 1)
+            ->where('offer_id', $offer_id)
+            ->orderBy('created_at', 'desc')
+            ->limit(3)
+            ->get();
+    }
 }
