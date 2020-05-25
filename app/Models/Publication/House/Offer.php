@@ -11,16 +11,6 @@ class Offer extends Model
 
     protected $table = 'publication_houses_offers';
 
-    static function getOffers()
-    {
-        return Offer::where('entity_id', config('app.id'))->get();
-    }
-
-    static function getOffer($id)
-    {
-        return Offer::where('entity_id', config('app.id'))->find($id);
-    }
-
     static function getOffersOptions()
     {
         $array   = [];

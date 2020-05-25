@@ -6,6 +6,7 @@ use App\Helpers\NotifyHelpers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Models\About\Information\Description;
+use App\Models\About\Information\Social;
 use App\Notifications\Contact;
 use Exception;
 use Illuminate\Contracts\View\Factory;
@@ -34,8 +35,12 @@ class ContactController extends Controller
     {
         $this->permissionBlock();
 
-        if (Description::getDescription()['email']) {
-            return view('pages.contact.page');
+        $site = Description::getDescription();
+
+        if ($site['email']) {
+            $socials = Social::getSocial();
+
+            return view('pages.contact.page', compact('site', 'socials'));
         }
 
         return back()->with('notify', json_encode(NotifyHelpers::info_top_center('fas fa-exclamation-triangle', 'Sistema sem e-mail cadastrado.')));

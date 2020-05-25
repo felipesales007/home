@@ -16,4 +16,13 @@ class SlideOne extends Model
             ->orderBy('order', 'asc')
             ->get();
     }
+
+    static function storageFile($storage)
+    {
+        if ($storage) {
+            return config('app.storage') . '/images/entities/' . config('app.id') . '/presentation/slide-one/' . $storage;
+        }
+
+        return url('/images/default/others/house.png');
+    }
 }

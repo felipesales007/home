@@ -1,6 +1,6 @@
 <div id="card-house-list" class="site-section site-section-sm bg-light d-none">
     <div class="container">
-        @if(!$houses[0])
+        @if(!isset($houses[0]))
             <div class="text-center">não há imóveis</div>
         @endif
         @foreach($houses as $house)
@@ -20,7 +20,7 @@
                                 </div>
 
                                 <!-- imagem -->
-                                <img src="{{ $house['image'] ? config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/houses/' . $house['image'] : url('images/default/others/image.png') }}" class="img-fluid img-fluid-list" alt="">
+                                <img src="{{ $house->storageFile($house['image']) }}" class="img-fluid img-fluid-list" alt="">
                             </div>
 
                             <!-- detalhes -->

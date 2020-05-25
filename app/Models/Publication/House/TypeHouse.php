@@ -11,16 +11,6 @@ class TypeHouse extends Model
 
     protected $table = 'publication_houses_types_houses';
 
-    static function getTypeHouses()
-    {
-        return TypeHouse::where('entity_id', config('app.id'))->get();
-    }
-
-    static function getTypeHouse($id)
-    {
-        return TypeHouse::where('entity_id', config('app.id'))->find($id);
-    }
-
     static function getTypesHousesOptions()
     {
         $array   = [];

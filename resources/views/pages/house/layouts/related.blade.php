@@ -1,4 +1,4 @@
-<div class="site-section site-section-sm {{ request()->segment(count(request()->segments())) == 'detalhes' ? 'bg-light' : 'bg-white' }}">
+<div class="site-section site-section-sm {{ basename(request()->path()) == 'detalhes' ? 'bg-light' : 'bg-white' }}">
     <div class="container mb--100 mb-lg-3">
         <!-- título -->
         <div class="row">
@@ -27,7 +27,7 @@
                                 </div>
 
                                 <!-- imagem -->
-                                <img src="{{ $recent['image'] ? config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/houses/' . $recent['image'] : url('images/default/others/image.png') }}" class="img-fluid img-fluid-module" alt="">
+                                <img src="{{ $recent->storageFile($recent['image']) }}" class="img-fluid img-fluid-module" alt="">
                             </div>
 
                             <!-- detalhes -->

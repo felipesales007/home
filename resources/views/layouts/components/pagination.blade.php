@@ -67,7 +67,7 @@
         </li>
 
         <!-- próxima -->
-        <li class="page-item {{ $paginator->currentPage() == $paginator->lastPage() ? 'disabled' : '' }}" title="próximo">
+        <li class="page-item {{ $paginator->currentPage() == $paginator->lastPage() ? 'disabled' : '' }}" title="próxima">
             @if($paginator->currentPage() == $paginator->lastPage())
                 <span class="page-link">
                     <i class="fas fa-angle-right"></i>

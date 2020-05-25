@@ -1,4 +1,4 @@
-<div class="site-blocks-cover inner-page-cover overlay fe-img-center" style="background-image: url({{ $house['image'] ? config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/houses/' . $house['image'] : url('images/default/others/image.png') }});" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay fe-img-center" style="background-image: url({{ $house->storageFile($house['image']) }});" data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
@@ -21,7 +21,7 @@
                 <div class="slide-one-item home-slider owl-carousel bg-light">
                     @foreach($items as $item)
                         @if($item['image'])
-                            <img src="{{ config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/items/' . $item['image'] }}" class="img-fluid img-fluid-detail" alt="">
+                            <img src="{{ $item->storageFile($item['image']) }}" class="img-fluid img-fluid-detail" alt="">
                         @endif
                     @endforeach
                 </div>
@@ -115,8 +115,8 @@
                                 @if($item['image'])
                                     <!-- imagens -->
                                     <div class="col-sm-6 col-md-4 col-lg-3">
-                                        <a href="{{ config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/items/' . $item['image'] }}" class="image-popup gal-item">
-                                            <img src="{{ config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/items/' . $item['image'] }}" class="img-fluid img-fluid-gallery" alt="">
+                                        <a href="{{ $item->storageFile($item['image']) }}" class="image-popup gal-item">
+                                            <img src="{{ $item->storageFile($item['image']) }}" class="img-fluid img-fluid-gallery" alt="">
                                         </a>
                                     </div>
                                 @endif

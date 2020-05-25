@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
-                <h1 class="mb-2">{{ request()->segment(count(request()->segments())) == 'lancamentos' ? 'lançamentos' : request()->segment(count(request()->segments())) }}</h1>
+                <h1 class="mb-2">{{ basename(request()->path()) == 'lancamentos' ? 'lançamentos' : basename(request()->path()) }}</h1>
             </div>
         </div>
     </div>

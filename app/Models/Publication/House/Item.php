@@ -13,19 +13,12 @@ class Item extends Model
         return Item::where('entity_id', config('app.id'))->where('house_id', $id)->orderBy('order', 'asc')->get();
     }
 
-    static function getItem($id)
+    static function storageFile($storage)
     {
-        return Item::where('entity_id', config('app.id'))->find($id);
-    }
-
-    static function storageFile($storage = 0)
-    {
-        if ($storage == 1) {
-            return '/images/entities/' . config('app.id') . '/publication/houses/items/';
-        } elseif ($storage == 2) {
-            return '/images/default/youtube.png';
+        if ($storage) {
+            return config('app.storage') . '/images/entities/' . config('app.id') . '/publication/houses/items/' . $storage;
         }
 
-        return '/images/default/default-image.png';
+        return url('/images/default/others/image.png');
     }
 }

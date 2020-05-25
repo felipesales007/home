@@ -10,7 +10,7 @@
         <div class="site-mobile-menu-body">
             <!-- social -->
             <div class="col-lg-12 text-right fe-social-mobile">
-                @foreach(App\Models\About\Information\Social::getSocial() as $social)
+                @foreach($socials as $social)
                     <a href="{{ $social['link'] }}" target="_blank" class="pl-0 pr-3 fe-text-color">
                         <i class="{{ $social->getIcon->icon }}"></i>
                     </a>
@@ -46,7 +46,7 @@
                             <li><a href="{{ route('house.used') }}">Usados</a></li>
                             <li><a href="{{ route('house.rental') }}">Aluguel</a></li>
                             <li><a href="{{ route('blog.page') }}">Notícias</a></li>
-                            @if(App\Models\About\Information\Description::getDescription()['email'])
+                            @if($site['email'])
                                 <li><a href="{{ route('contact.page') }}">Contato</a></li>
                             @endif
                         </ul>

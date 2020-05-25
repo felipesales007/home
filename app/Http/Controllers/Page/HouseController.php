@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\About\Information\Description;
+use App\Models\About\Information\Social;
 use App\Models\Publication\House\House;
 use App\Models\Publication\House\Item;
 use Illuminate\Contracts\View\Factory;
@@ -24,6 +26,8 @@ class HouseController extends Controller
 
         $offer = 2;
 
+        $site         = Description::getDescription();
+        $socials      = Social::getSocial();
         $background   = House::getRandomImage($offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
@@ -31,10 +35,10 @@ class HouseController extends Controller
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses  = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
-        $recents = House::getHouseRecents($offer);
+        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
+        $recents = House::getHousesRecents($offer);
 
-        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
+        return view('pages.house.page', compact('site','socials', 'background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
 
     /**
@@ -49,6 +53,8 @@ class HouseController extends Controller
 
         $offer = 3;
 
+        $site         = Description::getDescription();
+        $socials      = Social::getSocial();
         $background   = House::getRandomImage($offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
@@ -56,10 +62,10 @@ class HouseController extends Controller
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses  = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
-        $recents = House::getHouseRecents($offer);
+        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
+        $recents = House::getHousesRecents($offer);
 
-        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
+        return view('pages.house.page', compact('site','socials', 'background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
 
     /**
@@ -74,6 +80,8 @@ class HouseController extends Controller
 
         $offer = 1;
 
+        $site         = Description::getDescription();
+        $socials      = Social::getSocial();
         $background   = House::getRandomImage($offer);
         $type_house   = $request['type_house'];
         $city         = $request['select_city'];
@@ -81,10 +89,10 @@ class HouseController extends Controller
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
-        $houses  = House::getHouseType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
-        $recents = House::getHouseRecents($offer);
+        $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $offer);
+        $recents = House::getHousesRecents($offer);
 
-        return view('pages.house.page', compact('background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
+        return view('pages.house.page', compact('site','socials', 'background', 'houses', 'type_house', 'city', 'neighborhood', 'order', 'recents'));
     }
 
     /**
@@ -97,20 +105,14 @@ class HouseController extends Controller
     {
         $this->permissionBlock();
 
-        $house = House::select('publication_houses.*', 'uf', 'publication_houses_types_houses.name as type',
-            'publication_houses_realtors.contact', 'publication_houses_realtors.whatsapp')
-            ->join('publication_houses_offers', 'publication_houses_offers.id', '=', 'publication_houses.offer_id')
-            ->join('publication_houses_types_houses', 'publication_houses_types_houses.id', '=', 'publication_houses.type_house_id')
-            ->join('publication_houses_realtors', 'publication_houses_realtors.id', '=', 'publication_houses.realtor_id')
-            ->join('states', 'states.id', '=', 'publication_houses.state_id')
-            ->where('publication_houses.entity_id', config('app.id'))
-            ->find($request['id']);
-
-        $items   = Item::getItems($house->id ?? null);
-        $recents = House::getHouseRecents($house['offer_id']);
+        $site    = Description::getDescription();
+        $socials = Social::getSocial();
+        $house   = House::getHouse($request['id']);
+        $items   = Item::getItems($house['id'] ?? null);
+        $recents = House::getHousesRecents($house['offer_id']);
 
         $this->permissionHasPage($house);
 
-        return view('pages.house.detail', compact('house', 'items', 'recents'));
+        return view('pages.house.detail', compact('site','socials','house', 'items', 'recents'));
     }
 }

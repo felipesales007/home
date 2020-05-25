@@ -11,8 +11,7 @@ class Social extends Model
 
     static function getSocial()
     {
-        return Social::select('about_informations_social.*', 'icons.icon', 'icons.name as name_icon')
-            ->join('icons', 'icons.id', '=', 'about_informations_social.icon_id')
+        return Social::select('about_informations_social.*')
             ->where('entity_id', config('app.id'))
             ->orderBy('order', 'asc')
             ->get();
