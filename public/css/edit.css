@@ -8,6 +8,7 @@ body,
 html {
     position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 a {
@@ -231,6 +232,10 @@ select {
     .img-fluid-gallery {
         height: 102px;
     }
+
+    .footer-mb-desktop {
+        margin-bottom: 1.2rem;
+    }
 }
 
 /*
@@ -259,6 +264,11 @@ select {
 
     .img-fluid-gallery {
         height: 126px;
+    }
+
+    .order-mobile {
+        float: right;
+        margin-bottom: 1rem;
     }
 }
 

@@ -548,6 +548,10 @@
     .fe-mobile-none {
         display: none;
     }
+
+    .fe-center-mobile {
+        text-align: center !important;
+    }
 }
 
 @media (max-width: 767px) {

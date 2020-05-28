@@ -95,7 +95,7 @@
                         </div>
 
                         <!-- ordem -->
-                        <div class="ml-auto d-flex align-items-center">
+                        <div class="ml-auto d-flex align-items-center order-mobile">
                             <div class="select-wrap ml-3 mt-2">
                                 <label>
                                     <select id="order" name="order" class="form-control form-control-sm d-block pr-5">
