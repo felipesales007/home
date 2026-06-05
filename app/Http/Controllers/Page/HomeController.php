@@ -26,8 +26,8 @@ class HomeController extends Controller
 
         $type_offer   = $request['type_offer'];
         $type_house   = $request['type_house'];
-        $city         = $request['select_city'];
-        $neighborhood = $request['select_neighborhood'];
+        $city         = $request['city'];
+        $neighborhood = $request['neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
@@ -37,6 +37,6 @@ class HomeController extends Controller
         $recents = News::getNews()->limit(3)->get();
         $houses  = House::getHousesType($type_house, $city, $neighborhood, $order, $orderBy, $type_offer);
 
-        return view('index', compact('site', 'socials', 'slides', 'recents', 'houses', 'type_offer', 'type_house', 'city', 'neighborhood', 'order'));
+        return view('index', compact('houses'));
     }
 }

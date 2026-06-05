@@ -29,8 +29,8 @@ class HouseController extends Controller
         $socials      = Social::getSocial();
         $background   = House::getRandomImage($type_offer);
         $type_house   = $request['type_house'];
-        $city         = $request['select_city'];
-        $neighborhood = $request['select_neighborhood'];
+        $city         = $request['city'];
+        $neighborhood = $request['neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
@@ -55,8 +55,8 @@ class HouseController extends Controller
         $socials      = Social::getSocial();
         $background   = House::getRandomImage($type_offer);
         $type_house   = $request['type_house'];
-        $city         = $request['select_city'];
-        $neighborhood = $request['select_neighborhood'];
+        $city         = $request['city'];
+        $neighborhood = $request['neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 
@@ -81,8 +81,8 @@ class HouseController extends Controller
         $socials      = Social::getSocial();
         $background   = House::getRandomImage($type_offer);
         $type_house   = $request['type_house'];
-        $city         = $request['select_city'];
-        $neighborhood = $request['select_neighborhood'];
+        $city         = $request['city'];
+        $neighborhood = $request['neighborhood'];
         $order        = $request['order'];
         $orderBy      = explode('-', $order);
 

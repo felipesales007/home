@@ -53,8 +53,8 @@
                                 {{ Form::select(
                                     "name",
                                     App\Models\Publication\House\House::getHousesCitiesOptions(),
-                                    old("select_city", $city),
-                                    ["id" => "select-city", "name" => "select_city", "class" => "form-control d-block", "placeholder" => "Selecione"]
+                                    old("city", $city),
+                                    ["id" => "select-city", "name" => "city", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                 )}}
                             </div>
                         </div>
@@ -66,8 +66,8 @@
                                 {{ Form::select(
                                     "name",
                                     App\Models\Publication\House\House::getHousesNeighborhoodsOptions(),
-                                    old("select_neighborhood", $neighborhood),
-                                    ["id" => "select-neighborhood", "name" => "select_neighborhood", "class" => "form-control d-block", "placeholder" => "Selecione"]
+                                    old("neighborhood", $neighborhood),
+                                    ["id" => "select-neighborhood", "name" => "neighborhood", "class" => "form-control d-block", "placeholder" => "Selecione"]
                                 )}}
                             </div>
                         </div>
