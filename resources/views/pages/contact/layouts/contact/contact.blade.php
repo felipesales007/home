@@ -68,15 +68,16 @@
 
                     <!-- no-captcha -->
                     <div class="form-group">
-                        <div class="input-group input-group-merge validate-g-recaptcha-response fe-recaptcha mt-20">
-                            {!!  NoCaptcha::renderJs () !!}
-                            {!!  NoCaptcha::display() !!}
-                        </div>
-                        <div id="g-recaptcha-error"></div>
-                        @if($errors->has('g-recaptcha-response'))
+                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" value="">
+                        @if ($errors->has('g-recaptcha-response'))
                             <!-- alerta de erro -->
-                            <div class="invalid-feedback" role="alert">{{ $errors->first('g-recaptcha-response') }}</div>
+                            <div class="invalid-feedback d-block" role="alert">{{ $errors->first('g-recaptcha-response') }}</div>
                         @endif
+                        <small class="text-muted d-block mt-2">
+                            Protegido por reCAPTCHA. Aplicam-se a
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade</a>
+                            e os <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Termos</a> do Google.
+                        </small>
                     </div>
 
                     <!-- botão -->
